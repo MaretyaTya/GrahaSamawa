@@ -37,47 +37,24 @@
     </header>
 
     <main class="main">
-        {{-- <section id="hero" class="hero section">
-            <img src="{{ asset ('images/BG.jpg') }}" alt=""">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10">
-                        <h2>Get Ready!</h2>
-                        <h2>We Are Finishing.</h2>
-                        <p>Lokasi area Bangil, Pasuruan</p>
-                        <div class="price">
-                            <p class="label mt-4"> Harga Mulai</p>
-                            <h3 class="value">Rp 96 Juta</h2>
-                        </div>
-                        <a href="https://wa.me/62895366481314" target="_blank" class="btn btn-hubungikami mt-4"><i class="fa-brands fa-whatsapp"></i><span> Hubungi Kami</span></a>
-                    </div>
+        <section id="hero" class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="{{ asset('images/GrahaSamawa.mp4') }}" type="video/mp4">
+        </video>
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2>Selamat Datang di</h2>
+                    <h2>Perumahan Graha Samawa</h2>
+                    <p>Lokasi area Bangil, Pasuruan</p>
+                    <a href="https://wa.me/62895366481314" target="_blank" class="btn btn-hubungikami mt-4">
+                            <i class="fa-brands fa-whatsapp"></i><span> Hubungi Kami</span>
+                    </a>
                 </div>
             </div>
-        </section> --}}
-
-    <section id="hero" class="hero">
-<video autoplay muted loop class="hero-video">
-    <source src="{{ asset('videos/GrahaSamawa.mp4') }}" type="video/mp4">
-</video>
-
-<div class="container">
-    <div class="row text-center">
-        <div class="col-12">
-            <h2>Selamat Datang di</h2>
-            <h2>Perumahan Graha Samawa</h2>
-            <p>Lokasi area Bangil, Pasuruan</p>
-                {{-- <div class="price">
-                    <p class="label mt-4">Harga Mulai</p>
-                    <h3 class="value">Rp 96 Juta</h3>
-                </div> --}}
-                <a href="https://wa.me/62895366481314" target="_blank" class="btn btn-hubungikami mt-4">
-                    <i class="fa-brands fa-whatsapp"></i><span> Hubungi Kami</span>
-                </a>
-            </div>
-        </div>
-    </div>
-    </section>
+        </section>
 
 
         <section id="unit" class="unit section pt-5">
