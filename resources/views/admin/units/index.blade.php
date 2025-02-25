@@ -95,54 +95,54 @@
                         </div>
                         <hr>
                         <div class="row">
-                            @foreach ($units as $unit)
+                            {{-- @foreach ($units as $unit)
                                 <h3>{{ $unit->nama_unit }}</h3>
                                 <p>{{ $unit->spesifikasi }}</p>
 
                                 @foreach ($unit->images as $image)
-                                    <img src="{{ asset('storage/' . $image->image_path) }}" width="150">
+                                    <img src="{{ asset('storage/' . $image->image_path) }}" width="150"> --}}
 
-                                    <div class="col-12 col-md-6 col-xl-4 d-flex mb-4">
-                                        <div class="card flex-fill">
-                                            <div class="card-body card-unit">
-                                                <div class="row">
-                                                    <div class="col-6 text-start">
-                                                        <h1>{{ $totalUnits }}</h1>
-                                                        <p>Total Unit Properti</p>
-                                                    </div>
-                                                    <div class="col-6 text-end icon-unit">
-                                                        <i class="bi bi-building-fill" style="font-size: 56px;"></i>
-                                                    </div>
-                                                </div>
+                            <div class="col-12 col-md-6 col-xl-4 d-flex mb-4">
+                                <div class="card flex-fill">
+                                    <div class="card-body card-unit">
+                                        <div class="row">
+                                            <div class="col-6 text-start">
+                                                {{-- <h1>{{ $totalUnits }}</h1> --}}
+                                                <p>Total Unit Properti</p>
                                             </div>
-                                            <div class="card-footer text-center">
-                                                <a href="dataunit.html">Lihat Detail <i
-                                                        class="bi bi-arrow-right-circle-fill ms-1"></i></a>
+                                            <div class="col-6 text-end icon-unit">
+                                                <i class="bi bi-building-fill" style="font-size: 56px;"></i>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="card-footer text-center">
+                                        <a href="dataunit.html">Lihat Detail <i
+                                                class="bi bi-arrow-right-circle-fill ms-1"></i></a>
+                                    </div>
+                                </div>
+                            </div>
 
-                                    <div class="col-12 col-md-6 col-xl-4 d-flex mb-4">
-                                        <div class="card flex-fill">
-                                            <div class="card-body card-unit">
-                                                <div class="row">
-                                                    <div class="col-6 text-start">
-                                                        <h1>{{ $totalVisitors }}</h1>
-                                                        <p>Total Pengunjung</p>
-                                                    </div>
-                                                    <div class="col-6 text-end icon-unit">
-                                                        <i class="bi bi-people-fill" style="font-size: 56px;"></i>
-                                                    </div>
-                                                </div>
+                            <div class="col-12 col-md-6 col-xl-4 d-flex mb-4">
+                                <div class="card flex-fill">
+                                    <div class="card-body card-unit">
+                                        <div class="row">
+                                            <div class="col-6 text-start">
+                                                {{-- <h1>{{ $totalVisitors }}</h1> --}}
+                                                <p>Total Pengunjung</p>
                                             </div>
-                                            <div class="card-footer text-center">
-                                                <a href="dataunit.html">Lihat Detail <i
-                                                        class="bi bi-arrow-right-circle-fill ms-1"></i></a>
+                                            <div class="col-6 text-end icon-unit">
+                                                <i class="bi bi-people-fill" style="font-size: 56px;"></i>
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
-                            @endforeach
+                                    <div class="card-footer text-center">
+                                        <a href="dataunit.html">Lihat Detail <i
+                                                class="bi bi-arrow-right-circle-fill ms-1"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- @endforeach
+                            @endforeach --}}
                         </div>
                         <div class="card border-1">
                             <div class="card-header">
@@ -165,7 +165,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($units as $unit)
+                                        {{-- @foreach ($units as $unit)
                                             <tr>
                                                 <th scope="row">1</th>
                                                 <td>{{ $unit->nama_unit }}</td>
@@ -186,14 +186,14 @@
                                                     </form>
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                        @endforeach --}}
                                     </tbody>
                                 </table>
 
                                 {{-- Pagination --}}
-                                <div class="d-flex justify-content-center">
+                                {{-- <div class="d-flex justify-content-center">
                                     {{ $units->links() }}
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
