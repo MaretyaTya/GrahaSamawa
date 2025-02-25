@@ -45,13 +45,19 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a href="/unit" class="sidebar-link" style="font-weight:500;font-size:18px;">
+                                <i class="bi bi-table pe-2"></i>
+                                Data Unit
+                            </a>
+                        </li>
+                        <!-- <li class="sidebar-item">
                             <a href="" class="sidebar-link collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#dataunit" aria-expanded="false"
                                 style="font-weight:500;font-size:18px;">
                                 <i class="bi bi-table pe-2"></i>
                                 Data
                             </a>
-                            <!-- LINKING KE SUB-MENU DISINI YAAAA -->
+                            LINKING KE SUB-MENU DISINI YAAAA
                             <ul id="dataunit" class="sidebar-dropdown list-unstyled collapse"
                                 data-bs-parrent="#sidebar">
                                 <li class="sidebar-item">
@@ -61,7 +67,7 @@
                                     {{-- <a href="#" class="sidebar-link"><i class="bi bi-chat-dots-fill pe-2"></i>Testimoni</a> --}}
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </aside>
