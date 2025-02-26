@@ -127,20 +127,20 @@
         <section id="tentang" class="tentang section pt-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 fasilitas-perum">
                         <h2 class="d-flex justify-content-center">Fasilitas</h2>
                         <div class="row d-flex justify-content-between text-center pt-2">
                             <div class="col-4">
-                                <i class="fa-solid fa-mosque"></i>
-                                <p>Masjid</p>
+                                <x-mdi-boom-gate-up-outline class="icon-fasilitas"/>
+                                <p>One Gate System</p>
                             </div>
                             <div class="col-4">
-                                <i class="fa-solid fa-mosque"></i>
-                                <p>Masjid</p>
+                                <x-mdi-run class="icon-fasilitas"/>
+                                <p>Jogging Track</p>
                             </div>
                             <div class="col-4">
-                                <i class="fa-solid fa-mosque"></i>
-                                <p>Masjid</p>
+                                <x-mdi-slide class="icon-fasilitas"/>
+                                <p>Taman Bermain</p>
                             </div>
                         </div>
                     </div>

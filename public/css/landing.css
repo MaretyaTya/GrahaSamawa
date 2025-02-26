@@ -269,6 +269,15 @@ h6 {
     font-weight: 400;
 }
 
+.tentang .fasilitas-perum{
+    color: var(--warna-primary);
+}
+
+.tentang .icon-fasilitas{
+    width: 50px;
+    height: 50px;
+}
+
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .lokasi .lokasi-item .gmap_canvas {
