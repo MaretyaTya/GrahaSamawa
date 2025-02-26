@@ -31,7 +31,7 @@
                 {{-- <h1 class="namasite">Graha Samawa</h1> --}}
             </a>
     
-            <a href="https://wa.me/62895366481314" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp fa-xl"></i><span> Whatsapp</span></a>
+            <a href="https://wa.me/62895366481314" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp fa-xl"></i><span> Hubungi Kami</span></a>
     
         </div>
     </header>
@@ -40,17 +40,17 @@
 
         <section id="hero" class="hero">
         <video autoplay muted loop class="hero-video">
-            <source src="{{ asset('images/GrahaSamawa.mp4') }}" type="video/mp4">
+            <source src="https://pixeldrain.com/api/file/3ZSazASt" type="video/mp4">
         </video>
 
         <div class="container">
-            <div class="row text-center">
+            <div class="row text-start">
                 <div class="col-12">
                     <h2>Selamat Datang di</h2>
-                    <h2>Perumahan Graha Samawa</h2>
+                    <h2>Graha Samawa</h2>
                     <p>Lokasi area Bangil, Pasuruan</p>
-                    <a href="https://wa.me/62895366481314" target="_blank" class="btn btn-hubungikami mt-4">
-                            <i class="fa-brands fa-whatsapp"></i><span> Hubungi Kami</span>
+                    <a href="#" target="_blank" class="btn btn-hubungikami mt-4">
+                        <i class="fa-solid fa-download"></i><span> Download Brosur</span>
                     </a>
                 </div>
             </div>
@@ -127,17 +127,34 @@
         <section id="tentang" class="tentang section pt-5">
             <div class="container">
                 <div class="row">
-                    <!-- <div class="col-lg-6"> -->
+                    <div class="col-12 col-md-6">
+                        <h2 class="d-flex justify-content-center">Fasilitas</h2>
+                        <div class="row d-flex justify-content-between text-center pt-2">
+                            <div class="col-4">
+                                <i class="fa-solid fa-mosque"></i>
+                                <p>Masjid</p>
+                            </div>
+                            <div class="col-4">
+                                <i class="fa-solid fa-mosque"></i>
+                                <p>Masjid</p>
+                            </div>
+                            <div class="col-4">
+                                <i class="fa-solid fa-mosque"></i>
+                                <p>Masjid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
                         <h2 class="d-flex justify-content-center">Tentang Kami</h2>
                         <p class="pt-2">Graha Samawa adalah perusahaan kontraktor dan pengembang properti. Graha Samawa didirikan pada tahun 2025, seorang pengusaha muda yang memiliki banyak ide inovatif dalam menciptakan kawasan hunian yang memadukan keindahan, keseimbangan lingkungan, dan kenyamanan bagi penghuninya.</p>
-                    <!-- </div> -->
+                    </div>
                 </div>
             </div>      
         </section>
 
         <section id="lokasi" class="lokasi section pt-5">
             <div class="container">
-                <div class="row gy-4 align-items-stretch justify-content-between lokasi-item">
+                <div class="row align-items-stretch justify-content-between lokasi-item">
                     <div class="col-lg-6 d-flex align-items-center gmap_canvas">
                         <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=bangil&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                     </div>
