@@ -39,29 +39,32 @@
     <main class="main">
 
         <section id="hero" class="hero">
-        <video autoplay muted loop class="hero-video">
-            <source src="https://pixeldrain.com/api/file/3ZSazASt" type="video/mp4">
-        </video>
+            <video autoplay muted loop class="hero-video">
+                <source src="https://pixeldrain.com/api/file/3ZSazASt" type="video/mp4">
+            </video>
 
-        <div class="container">
-            <div class="row text-start">
-                <div class="col-12">
-                    <h2>Selamat Datang di</h2>
-                    <h2>Graha Samawa</h2>
-                    <p>Lokasi area Bangil, Pasuruan</p>
-                    <a href="#" target="_blank" class="btn btn-hubungikami mt-4">
-                        <i class="fa-solid fa-download"></i><span> Download Brosur</span>
-                    </a>
+            <div class="container">
+                <div class="row text-start">
+                    <div class="col-12">
+                        <h2>Selamat Datang di</h2>
+                        <h2>Graha Samawa</h2>
+                        <p>Lokasi area Bangil, Pasuruan</p>
+                        <a href="#" target="_blank" class="btn btn-hubungikami mt-4">
+                            <i class="fa-solid fa-download"></i><span> Download Brosur</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
 
-        <section id="unit" class="unit section pt-5">
+        <section id="unit" class="unit section">
             <div class="container">
-                <h2 class="d-flex justify-content-center">Unit Properti</h2>
-               
-                <div class="row row-cols-3 g-5 pt-3 d-flex align-items-center">
+                <div class="d-flex justify-content-center judul-section">
+                    <h2 class="">Unit Properti</h2>
+                </div>
+                
+                <div class="row row-cols-3 pt-3 d-flex justify-content-center">
                     <div class="col-12 col-lg-6 col-xl-4">
                         <div class="card shadow-lg mb-5 rounded">
                             <img src="{{ asset ('images/BG.jpg') }}" class="card-img-top" alt="">
@@ -124,46 +127,54 @@
             </div>
         </section>
 
-        <section id="tentang" class="tentang section pt-5">
+        <section id="tentang" class="tentang section">
             <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6 fasilitas-perum">
-                        <h2 class="d-flex justify-content-center">Fasilitas</h2>
-                        <div class="row d-flex justify-content-between text-center pt-2">
-                            <div class="col-4">
-                                <x-mdi-boom-gate-up-outline class="icon-fasilitas"/>
-                                <p>One Gate System</p>
-                            </div>
-                            <div class="col-4">
-                                <x-mdi-run class="icon-fasilitas"/>
-                                <p>Jogging Track</p>
-                            </div>
-                            <div class="col-4">
-                                <x-mdi-slide class="icon-fasilitas"/>
-                                <p>Taman Bermain</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h2 class="d-flex justify-content-center">Tentang Kami</h2>
-                        <p class="pt-2">Graha Samawa adalah perusahaan kontraktor dan pengembang properti. Graha Samawa didirikan pada tahun 2025, seorang pengusaha muda yang memiliki banyak ide inovatif dalam menciptakan kawasan hunian yang memadukan keindahan, keseimbangan lingkungan, dan kenyamanan bagi penghuninya.</p>
-                    </div>
+                <div class="d-flex justify-content-center judul-section">
+                    <h2 class="">Tentang Kami</h2>
                 </div>
+                    <p class="pt-2">Graha Samawa adalah perusahaan kontraktor dan pengembang properti. Graha Samawa didirikan pada tahun 2025, seorang pengusaha muda yang memiliki banyak ide inovatif dalam menciptakan kawasan hunian yang memadukan keindahan, keseimbangan lingkungan, dan kenyamanan bagi penghuninya.</p>
             </div>      
         </section>
 
-        <section id="lokasi" class="lokasi section pt-5">
+        <section id="fasilitas-perum" class="fasilitas-perum section">
+            <div class="container py-5 judul-section">
+                <div class="d-flex justify-content-center mb-4 judul-section">
+                    <h2 class="">Fasilitas</h2>
+                </div>
+                <div class="row d-flex justify-content-between text-center pt-2">
+                    <div class="col-3">
+                        <x-mdi-boom-gate-up-outline class="icon-fasilitas"/>
+                        <p>One Gate System</p>
+                    </div>
+                    <div class="col-3">
+                        <x-mdi-run class="icon-fasilitas"/>
+                        <p>Jogging Track</p>
+                    </div>
+                    <div class="col-3">
+                        <x-mdi-slide class="icon-fasilitas"/>
+                        <p>Taman Bermain</p>
+                    </div>
+                    <div class="col-3">
+                        <x-mdi-home-flood class="icon-fasilitas"/>
+                        <p>Bebas Banjir</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lokasi" class="lokasi section">
             <div class="container">
-                <div class="row align-items-stretch justify-content-between lokasi-item">
+                <div class="row align-items-stretch justify-content-between lokasi-item text-start">
                     <div class="col-lg-6 d-flex align-items-center gmap_canvas">
-                        <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=bangil&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                        
+                        <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.5474862487054!2d112.7851232!3d-7.624114199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7db006e104971%3A0x952c0998010054d8!2sPerumahan%20Graha%20Samawa%20Bangil!5e0!3m2!1sen!2sid!4v1740561625465!5m2!1sen!2sid" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                         <!-- <style>
                                 .gmap_canvas{position:relative;text-align:right;width:600px;height:400px;}
                                 .gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}
                         </style> -->
-                    <div class="col-lg-6 d-flex justify-content-center flex-column">
-                        <div class="d-flex justify-content-center">
+                    <div class="col-lg-5 d-flex justify-content-center flex-column">
+                        <div class="d-flex justify-content-center judul-section">
                             <h2>Lokasi Kami</h2>
                         </div>
                         <p><strong>Alamat Graha Samawa</strong> : Jl. Raya Cilegon, Bangil, Pasuruan</p>
@@ -177,8 +188,10 @@
 
         <section id="mediasosial" class="mediasosial section">
             <div class="container">
-                <div class="row">
-                    <h2 class="d-flex justify-content-center">Ikuti Kami</h2>
+                <div class="row judul-section">
+                    <div class="d-flex justify-content-center judul-section">
+                        <h2 class="">Ikuti Kami</h2>
+                    </div>
                         <div class="sosmed d-flex align-items-center justify-content-center">
                             <a href="https://wa.me/62895366481314" target="_blank" class="me-5"><i class="fa-brands fa-whatsapp"></i><span> 0895366481314</span></a>
                             <a href="https://instagram.com/grahasamawa" target="_blank" class="me-5"><i class="fa-brands fa-instagram"></i><span> @grahasamawa</span></a>
