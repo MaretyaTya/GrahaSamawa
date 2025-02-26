@@ -64,7 +64,7 @@
                     <h2 class="">Unit Properti</h2>
                 </div>
                 
-                <div class="row row-cols-3 pt-3 d-flex align-items-center">
+                <div class="row row-cols-3 pt-3 d-flex justify-content-center">
                     <div class="col-12 col-lg-6 col-xl-4">
                         <div class="card shadow-lg mb-5 rounded">
                             <img src="{{ asset ('images/BG.jpg') }}" class="card-img-top" alt="">
