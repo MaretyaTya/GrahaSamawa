@@ -49,7 +49,7 @@
                         <h2>Selamat Datang di</h2>
                         <h2>Graha Samawa</h2>
                         <p>Lokasi area Bangil, Pasuruan</p>
-                        <a href="#" target="_blank" class="btn btn-hubungikami mt-4">
+                        <a href="{{ asset('brosur/Brosur.pdf') }}" class="btn btn-hubungikami mt-4" download>
                             <i class="fa-solid fa-download"></i><span> Download Brosur</span>
                         </a>
                     </div>
