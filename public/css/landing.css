@@ -1,0 +1,459 @@
+/* VARIABLE FONT */
+:root {
+    --default-font: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --second-font: 'Montserrat', sans-serif;
+    --third-font: 'Poppins', sans-serif;
+}
+
+/* VARIABLE WARNA */
+:root {
+    --warna-primary: #001d3d;
+    --warna-second: #003566;
+    --warna-aksen: #ffc300;
+    --warna-hitam: #000814;
+    --warna-putih: #FFF;
+    --warna-danger : #DC3545;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+
+body {
+    font-family: var(--default-font)
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--warna-putih);
+    font-family: var(--second-font);
+}
+
+#unit,
+#tentang, 
+#fasilitas-perum, 
+#lokasi, 
+#mediasosial{
+    margin-top: 150px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+
+/* STYLING UNTUK HEADER */
+.header {
+    background-color: var(--warna-putih);
+    padding: 20px 0;
+    z-index: 997;
+}
+
+.header .logo {
+    line-height: 1;
+}
+
+.header .logo img {
+    max-width: 40px;
+    margin-right: 8px;
+}
+
+.header .logo h1 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+    color: var(--warna-hitam);
+}
+
+.header .btn-whatsapp,
+.header .btn-whatsapp:focus {
+    color: var(--warna-putih);
+    font-family: var(--third-font);
+    background-color: var(--warna-primary);
+    font-size: 14px;
+    padding: 8px 26px;
+    margin: 0;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.header .btn-whatsapp:hover,
+.header .btn-whatsapp:focus:hover {
+    color: var(--warna-putih);
+    background-color: var(--warna-second);
+}
+
+/* RESPONSIVE HEADER */
+@media (max-width: 440px) {
+    .header .btn-whatsapp {
+        font-size: 13px;
+        padding: 6px 20px;
+        margin: 0 15px 0 0;
+    }
+
+    .header .btn-whatsapp span {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* STYLING UNTUK HERO (BAWAH HEADER / NAVIGASI */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.hero img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    background: color-mix(in srgb, var(--warna-hitam), transparent 45%);
+    /* background: rgba(0, 0, 0, 0.35); */
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.hero .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    color: white;
+    width: 80%;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.hero p {
+    color: var(--warna-putih);
+    margin: 5px 0 0 0;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.hero .price p {
+    margin: 0;
+    font-weight: 400;
+}
+
+.price {
+    padding: 0 0 0 16px;
+    margin: 0 16px 0 0;
+    border-left: 6px solid var(--warna-second);
+}
+
+.hero h3 {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.hero .btn-hubungikami,
+.hero .btn-hubungikami:focus {
+    color: var(--warna-putih);
+    font-family: var(--second-font);
+    background-color: var(--warna-primary);
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 26px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.hero .btn-hubungikami:hover,
+.hero .btn-hubungikami:focus:hover {
+    color: var(--warna-putih);
+    background-color: var(--warna-second);
+}
+
+.hero .brosur-unavailable{
+    color: var(--warna-putih);
+    font-family: var(--second-font);
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 26px;
+    border-radius: 4px;
+}
+
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+.unit h2 {
+    color: var(--warna-second);
+    font-family: var(--second-font);
+    font-weight: 700;
+}
+
+.unit h4 {
+    color: var(--warna-second);
+    font-family: var(--second-font);
+    font-weight: 600;
+}
+
+.unit p {
+    color: var(--warna-primary);
+    font-family: var(--second-font);
+    font-weight: 400;
+}
+
+.unit .card-body {
+    font-family: var(--third-font);
+}
+
+.unit .card-body button {
+    font-weight: 500;
+    border-color: var(--warna-primary);
+    color: var(--warna-primary);
+    transition: 0.4s;
+}
+
+.unit .card-body button:hover {
+    border-color: var(--warna-second);
+    background-color: var(--warna-second);
+    color: var(--warna-putih);
+}
+
+.unit .card-body a {
+    border-color: var(--warna-primary);
+    background-color: var(--warna-primary);
+    color: var(--warna-putih);
+    transition: 0.4s;
+}
+
+.unit .card-body a:hover {
+    border-color: var(--warna-second);
+    background-color: var(--warna-second);
+}
+
+.unit .card-body i {
+    color: var(--warna-primary);
+}
+
+.unit .card-body .fasilitas {
+    font-family: var(--second-font);
+    font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+.tentang h2 {
+    color: var(--warna-second);
+    font-family: var(--second-font);
+    font-weight: 700;
+}
+
+.tentang p {
+    color: var(--warna-primary);
+    font-family: var(--second-font);
+    font-weight: 400;
+}
+
+.tentang .fasilitas-perum {
+    color: var(--warna-primary);
+}
+
+.tentang .icon-fasilitas {
+    width: 50px;
+    height: 50px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+#fasilitas-perum{
+    background-color: var(--warna-primary);
+}
+.fasilitas-perum .icon-fasilitas{
+    color: var(--warna-putih);
+    width: 50px;
+    height: 50px;
+}
+
+.fasilitas-perum p{
+    color: var(--warna-putih);
+    font-family: var(--second-font);
+    font-weight: 400;
+}
+
+.fasilitas-perum .judul-section h2::before,
+.fasilitas-perum .judul-section h2::after {
+    background-color: var(--warna-putih);
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+.lokasi .lokasi-item .gmap_canvas {
+    position: relative;
+    min-height: 500px;
+}
+
+@media (max-width: 640px) {
+    .lokasi .lokasi-item .gmap_canvas {
+        min-height: 300px;
+    }
+}
+
+.lokasi .lokasi-item .gmap_canvas iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lokasi h2 {
+    color: var(--warna-second);
+    font-family: var(--second-font);
+    font-weight: 700;
+}
+
+.lokasi p {
+    color: var(--warna-primary);
+    font-family: var(--second-font);
+    font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+.mediasosial {
+    padding: 100px 0 250px 0;
+}
+
+.mediasosial h2 {
+    color: var(--warna-second);
+    font-family: var(--second-font);
+    font-weight: 700;
+}
+
+.mediasosial a {
+    color: color-mix(in srgb, var(--warna-second), transparent 40%);
+    font-size: 24px;
+    font-family: var(--second-font);
+    font-weight: 400;
+}
+
+.mediasosial a:hover {
+    color: var(--warna-primary);
+}
+
+@media (max-width: 932px) {
+    .mediasosial a {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        color: color-mix(in srgb, var(--warna-second), transparent 40%);
+        border-radius: 50%;
+        border: 2px solid color-mix(in srgb, var(--warna-second), transparent 40%);
+        transition: 0.3s;
+    }
+
+    .mediasosial a:hover {
+        color: var(--warna-second);
+        border-color: var(--warna-second);
+    }
+
+    .mediasosial span {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+.footer {
+    background-color: var(--warna-primary);
+}
+
+.footer p {
+    color: var(--warna-putih);
+    font-family: var(--second-font);
+    font-weight: 500;
+}
+
+.footer .kontak{
+    font-size: .7em;
+    font-weight: 400;
+    
+}
+
+.footer span{
+    color: var(--warna-putih);
+}
+
+.footer a{
+    transition: text-shadow 0.5s ease-in-out;
+}
+
+.footer a:hover{
+    text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+.modal .modal-content .modal-title {
+    font-family: var(--second-font);
+    color: var(--warna-second);
+    font-weight: 600;
+}
+
+.modal .modal-body {
+    font-family: var(--second-font);
+    color: var(--warna-hitam);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.modal .modal-body i {
+    color: var(--warna-second);
+}
+
+.modal .modal-footer .btn {
+    font-family: var(--third-font);
+    background-color: var(--warna-primary);
+    border-color: var(--warna-primary);
+}
+
+.modal .modal-footer .btn:hover {
+    background-color: var(--warna-second);
+    border-color: var(--warna-second);
+}
