@@ -85,10 +85,36 @@
                             @foreach ($units as $unit)
                                 <div class="col-12 col-lg-6 col-xl-4">
                                     <div class="card shadow-lg mb-5 rounded">
+                                        <div id="testCarousel" class="carousel slide">
+                                            <div class="carousel-inner">
+                                                <!-- PENGAMBILAN DATA IMAGE BUAT SLIDESHOW DISINI -->
+                                                <div class="carousel-item active">
+                                                    <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
+                                                    alt="{{ $unit->nama_unit }}" style="max-height: 225px; object-fit: cover;"
+                                                    class="card-img-top">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
+                                                    alt="{{ $unit->nama_unit }}" style="max-height: 225px; object-fit: cover;"
+                                                    class="card-img-top">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
+                                                    alt="{{ $unit->nama_unit }}" style="max-height: 225px; object-fit: cover;"
+                                                    class="card-img-top">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#testCarousel" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#testCarousel" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
                                         {{-- <img src="{{ asset('images/BG.jpg') }}" class="card-img-top" alt=""> --}}
-                                        <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
-                                            alt="{{ $unit->nama_unit }}" style="max-height: 225px; object-fit: cover;"
-                                            class="card-img-top">
+                                        
                                         <div class="card-body">
                                             <div class="title">
                                                 <div class="row row-cols-2">
@@ -221,7 +247,7 @@
                             <div class="d-flex justify-content-center judul-section">
                                 <h2>Lokasi Kami</h2>
                             </div>
-                            <p><strong>Alamat Graha Samawa</strong> : Jl. Raya Cilegon, Bangil, Pasuruan</p>
+                            <p><strong>Alamat Graha Samawa</strong> : Watu Lanyu, Oro-Oro Ombowetan, Kec. Rembang, Pasuruan, Jawa Timur 67152</p>
                             <p>Hunian nyaman dengan akses mudah ke berbagai fasilitas penting, karena Terletak di jalur
                                 utama.</p>
                             <ul>
@@ -333,7 +359,7 @@
                 </div>
                 <div class="copyright">
                     <div class="container copyright text-center mt-4 p-4">
-                        <p style="font-size: .65em;">&copy; Copyright <strong>Testing Website</strong></p>
+                        <p style="font-size: .6em;">&copy; Copyright <strong>Testing Website</strong></p>
                     </div>
                 </div>
             </footer>

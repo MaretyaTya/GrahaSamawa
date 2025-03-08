@@ -7,9 +7,31 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div>
+                <!-- <div>
                     <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}" class="d-block w-100" style="border-radius: 10px; max-height: 300px; object-fit: cover;" alt="{{ $unit->nama_unit }}">
-                </div>
+                </div> -->
+                <div id="testCarouselDetail" class="carousel slide">
+                    <div class="carousel-inner">
+                        <!-- PENGAMBILAN DATA IMAGE BUAT SLIDESHOW DISINI -->
+                        <div class="carousel-item active">
+                            <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}" class="d-block w-100" style="border-radius: 10px; max-height: 300px; object-fit: cover;" alt="{{ $unit->nama_unit }}">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}" class="d-block w-100" style="border-radius: 10px; max-height: 300px; object-fit: cover;" alt="{{ $unit->nama_unit }}">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}" class="d-block w-100" style="border-radius: 10px; max-height: 300px; object-fit: cover;" alt="{{ $unit->nama_unit }}">
+                        </div>           
+                    </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testCarouselDetail" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testCarouselDetail" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 <div class="row row-cols-2 mt-3">
                     <div class="col-12 col-md-6">
                         <h5 id="nama_unit" class="text-dark mb-4"> Nama Unit </h5>
