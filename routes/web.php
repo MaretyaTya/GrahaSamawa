@@ -1,29 +1,30 @@
 <?php
 
 use App\Http\Controllers\Admin\BrochureController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\LandingPageController;
-
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-// Route::get('/', function () {
-//     return Inertia::render('welcome');
-// })->name('home');
 
 // Landing Page
 Route::get('/', [LandingPageController::class, 'index'])->name('landing.index');
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
+// Proteksi Halaman Admin
+Route::middleware(['auth', 'auth.session'])->group(function () {
+    // Brochure
+    Route::get('/brochure', [BrochureController::class, 'index'])->name('admin.units.brochure');
+    Route::post('/brochure/update', [BrochureController::class, 'updateBrochure'])->name('admin.brochure.update');
 });
 
-// Brochure
-Route::get('/brochure', [BrochureController::class, 'index'])->name('admin.units.brochure');
-Route::post('/brochure/update', [BrochureController::class, 'updateBrochure'])->name('admin.brochure.update');
+//Brochure Download
 Route::get('/admin/brochure/download/{id}', [BrochureController::class, 'downloadBrochure'])
     ->name('admin.brochure.download');
+
+
+//Login
+Route::get('/admin', [LoginController::class, 'LoginForm'])->name('login');
+Route::post('/auth', [LoginController::class, 'auth'])->name('auth');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 require __DIR__ . '/settings.php';
 require __DIR__ . '/auth.php';

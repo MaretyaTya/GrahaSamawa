@@ -25,4 +25,6 @@ class AppServiceProvider extends ServiceProvider
             view()->share('units', Unit::all());
         }
     }
+
+    // public const HOME = '/admin/dashboard';
 }

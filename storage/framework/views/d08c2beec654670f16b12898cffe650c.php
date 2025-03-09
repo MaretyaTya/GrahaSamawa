@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="{{ asset('images/icon/ICON.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo e(asset('images/icon/ICON.png')); ?>" type="image/x-icon">
         <title>Graha Samawa</title>
 
         <!-- BOOTSTRAP CDN -->
@@ -16,8 +16,8 @@
         </script>
 
         <!-- LINK CSS DAN JS -->
-        <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
-        <script src="{{ asset('js/script.js') }}"></script>
+        <link rel="stylesheet" href="<?php echo e(asset('css/landing.css')); ?>">
+        <script src="<?php echo e(asset('js/script.js')); ?>"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <!-- FONT AWESOME & GOOGLE FONTS CDN -->
@@ -36,7 +36,7 @@
             <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
                 <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-                    <img src="{{ asset('images/icon/GS_Black.png') }} " alt="">
+                    <img src="<?php echo e(asset('images/icon/GS_Black.png')); ?> " alt="">
                 </a>
 
                 <a href="https://wa.me/62895366481314" target="_blank" class="btn-whatsapp"><i
@@ -59,17 +59,17 @@
                             <h2>Graha Samawa</h2>
                             <p>Lokasi area Bangil, Pasuruan</p>
 
-                            @if ($brochure)
-                                <a href="{{ route('admin.brochure.download', $brochure->id) }}"
+                            <?php if($brochure): ?>
+                                <a href="<?php echo e(route('admin.brochure.download', $brochure->id)); ?>"
                                     class="btn btn-hubungikami mt-4">
                                     <i class="fa-solid fa-download"></i> <span>Unduh Brosur</span>
                                 </a>
-                            @else
+                            <?php else: ?>
                                 <!-- <p class="text-danger">Brosur belum tersedia.</p> -->
                                 <a href="" class="btn btn-danger brosur-unavailable mt-4 disabled bg-danger">
                                     <i class="fa-solid fa-circle-exclamation"></i> <span>Brosur Belum Tersedia</span>
                                 </a>
-                            @endif
+                            <?php endif; ?>
 
                         </div>
                     </div>
@@ -80,27 +80,27 @@
                     <h2 class="d-flex justify-content-center">Unit Properti</h2>
 
                     <div class="row row-cols-3 g-5 pt-3 d-flex justify-content-center">
-                        {{-- @foreach ($units as $unit) --}}
-                        @if (isset($units) && count($units) > 0)
-                            @foreach ($units as $unit)
+                        
+                        <?php if(isset($units) && count($units) > 0): ?>
+                            <?php $__currentLoopData = $units; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-12 col-lg-6 col-xl-4">
                                     <div class="card shadow-lg mb-5 rounded">
-                                        {{-- <img src="{{ asset('images/BG.jpg') }}" class="card-img-top" alt=""> --}}
-                                        <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
-                                            alt="{{ $unit->nama_unit }}" style="max-height: 225px; object-fit: cover;"
+                                        
+                                        <img src="<?php echo e(asset('storage/' . $unit->images->first()->image_path)); ?>"
+                                            alt="<?php echo e($unit->nama_unit); ?>" style="max-height: 225px; object-fit: cover;"
                                             class="card-img-top">
                                         <div class="card-body">
                                             <div class="title">
                                                 <div class="row row-cols-2">
                                                     <div class="col-lg-6">
-                                                        <h4 class="card-text">{{ $unit->nama_unit }}</h4>
+                                                        <h4 class="card-text"><?php echo e($unit->nama_unit); ?></h4>
                                                     </div>
                                                     <div class="col-lg-6 d-flex justify-content-end">
                                                         <p class="card-text">Harga mulai dari</p>
                                                     </div>
                                                     <div class="col-lg-12 col-12">
                                                         <h4 class="card-text d-flex justify-content-end value-properti">
-                                                            Rp {{ number_format($unit->harga, 0, ',', '.') }}</h4>
+                                                            Rp <?php echo e(number_format($unit->harga, 0, ',', '.')); ?></h4>
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -116,7 +116,8 @@
                                                         Kamar Tidur :
                                                     </div>
                                                     <div class="col-3 col-lg-3 value-kt d-flex justify-content-lg-end">
-                                                        {{ $unit->kamar_tidur }}
+                                                        <?php echo e($unit->kamar_tidur); ?>
+
                                                     </div>
                                                     <div class="col-1 col-lg-1">
                                                         <i class="fas fa-bath"></i>
@@ -125,7 +126,8 @@
                                                         Kamar Mandi :
                                                     </div>
                                                     <div class="col-3 col-lg-3 value-km d-flex justify-content-lg-end">
-                                                        {{ $unit->kamar_mandi }}
+                                                        <?php echo e($unit->kamar_mandi); ?>
+
                                                     </div>
                                                     <div class="col-1 col-lg-1">
                                                         <i class="fas fa-building"></i>
@@ -134,7 +136,7 @@
                                                         Luas Bangunan :
                                                     </div>
                                                     <div class="col-3 col-lg-3 value-lb d-flex justify-content-lg-end">
-                                                        {{ $unit->luas_bangunan }}<span>m&sup2;</span>
+                                                        <?php echo e($unit->luas_bangunan); ?><span>m&sup2;</span>
                                                     </div>
                                                     <div class="col-1 col-lg-1">
                                                         <i class="fas fa-maximize"></i>
@@ -144,23 +146,23 @@
                                                     </div>
                                                     <div id="luas_tanah"
                                                         class="col-3 col-lg-3 value-kt d-flex justify-content-lg-end">
-                                                        {{ $unit->luas_tanah }}<span>m&sup2;</span>
+                                                        <?php echo e($unit->luas_tanah); ?><span>m&sup2;</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <button type="button" class="btn btn-outline-primary mt-4"
                                                 data-bs-toggle="modal" data-bs-target="#detailUnitModal"
-                                                data-unit="{{ $unit }}" style="width: 100%;">Detail</button>
+                                                data-unit="<?php echo e($unit); ?>" style="width: 100%;">Detail</button>
                                             <a href="https://wa.me/62895366481314" target="_blank"
                                                 class="btn btn-primary mt-2" style="width: 100%;">Hubungi</a>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                        @else
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php else: ?>
                             <p>Data belum tersedia.</p>
-                        @endif
-                        @include('modals.landing-detail-modal')
+                        <?php endif; ?>
+                        <?php echo $__env->make('modals.landing-detail-modal', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                     </div>
                 </div>
             </section>
@@ -184,19 +186,95 @@
                     </div>
                     <div class="row d-flex justify-content-between text-center pt-2">
                         <div class="col-6 col-md-3">
-                            <x-mdi-boom-gate-up-outline class="icon-fasilitas" />
+                            <?php if (isset($component)) { $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c = $attributes; } ?>
+<?php $component = BladeUI\Icons\Components\Svg::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('mdi-boom-gate-up-outline'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\BladeUI\Icons\Components\Svg::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'icon-fasilitas']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $attributes = $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
                             <p>One Gate System</p>
                         </div>
                         <div class="col-6 col-md-3">
-                            <x-mdi-run class="icon-fasilitas" />
+                            <?php if (isset($component)) { $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c = $attributes; } ?>
+<?php $component = BladeUI\Icons\Components\Svg::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('mdi-run'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\BladeUI\Icons\Components\Svg::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'icon-fasilitas']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $attributes = $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
                             <p>Jogging Track</p>
                         </div>
                         <div class="col-6 col-md-3">
-                            <x-mdi-slide class="icon-fasilitas" />
+                            <?php if (isset($component)) { $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c = $attributes; } ?>
+<?php $component = BladeUI\Icons\Components\Svg::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('mdi-slide'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\BladeUI\Icons\Components\Svg::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'icon-fasilitas']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $attributes = $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
                             <p>Taman Bermain</p>
                         </div>
                         <div class="col-6 col-md-3">
-                            <x-mdi-home-flood class="icon-fasilitas" />
+                            <?php if (isset($component)) { $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c = $attributes; } ?>
+<?php $component = BladeUI\Icons\Components\Svg::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('mdi-home-flood'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\BladeUI\Icons\Components\Svg::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'icon-fasilitas']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $attributes = $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
                             <p>Bebas Banjir</p>
                         </div>
                     </div>
@@ -370,3 +448,4 @@
 
 
 </html>
+<?php /**PATH C:\Users\maret\OneDrive\Documents\WEBSITE PROJECT\Real Estate\Website\GrahaSamawa\resources\views/landing/index.blade.php ENDPATH**/ ?>

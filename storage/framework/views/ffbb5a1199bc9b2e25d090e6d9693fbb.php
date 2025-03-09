@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="{{ asset('images/icon/ICON.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo e(asset('images/icon/ICON.png')); ?>" type="image/x-icon">
         <title>Admin Graha Samawa</title>
 
         <!-- BOOTSTRAP CDN -->
@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+        <link rel="stylesheet" href="<?php echo e(asset('css/dashboard.css')); ?>">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     </head>
@@ -71,12 +71,12 @@
                                     <i class="bi bi-person-circle avatar"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <i class="bi bi-box-arrow-right pe-1"></i> Keluar
                                     </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                        @csrf
+                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST">
+                                        <?php echo csrf_field(); ?>
                                     </form>
                                 </div>
                             </li>
@@ -86,7 +86,7 @@
                 <!-- KONTEN DISINI -->
                 <main class="content px-3 py-2">
                     <div class="container-fluid">
-                        @yield('content')
+                        <?php echo $__env->yieldContent('content'); ?>
                     </div>
                 </main>
 
@@ -103,7 +103,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
-        <script src="{{ asset('js/script.js') }}"></script>
+        <script src="<?php echo e(asset('js/script.js')); ?>"></script>
 
         <!-- Preview Gambar -->
         <script>
@@ -161,3 +161,4 @@
     </body>
 
 </html>
+<?php /**PATH C:\Users\maret\OneDrive\Documents\WEBSITE PROJECT\Real Estate\Website\GrahaSamawa\resources\views/layout/master.blade.php ENDPATH**/ ?>

@@ -1,21 +1,22 @@
 /* VARIABLE FONT */
-:root{
-    --default-font : 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --second-font : 'Montserrat', sans-serif;
-    --third-font : 'Poppins', sans-serif;
+:root {
+    --default-font: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --second-font: 'Montserrat', sans-serif;
+    --third-font: 'Poppins', sans-serif;
 }
 
-:root{
-    --warna-primary : #001d3d;
-    --warna-second : #003566;
-    --warna-aksen : #ffc300;
-    --warna-hitam : #000814;
-    --warna-putih : #FFF;
+:root {
+    --warna-primary: #001d3d;
+    --warna-second: #003566;
+    --warna-aksen: #ffc300;
+    --warna-hitam: #000814;
+    --warna-putih: #FFF;
 }
 
 /* ------------------------------------------------ */
 
-html, body{
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -23,21 +24,21 @@ html, body{
     background-color: var(--warna-second);
 }
 
-.card{
+.card {
     animation: FadeIn 1s ease;
 }
 
-h2{
+h2 {
     font-family: var(--second-font);
     font-weight: 700;
     font-size: 36px;
 }
 
-label{
+label {
     font-family: var(--second-font);
 }
 
-.btn{
+.btn {
     background-color: var(--warna-second);
     border-color: var(--warna-second);
     font-size: 18px;
@@ -46,12 +47,20 @@ label{
     transition: 0.4s;
 }
 
-.btn:hover{
+.btn:hover {
+    background-color: var(--warna-second);
+    border-color: var(--warna-second);
     background-color: var(--warna-primary);
     border-color: var(--warna-primary);
 }
 
-.copyright{
+.custom-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.copyright {
     font-family: var(--default-font);
     font-size: 14px;
 }
@@ -59,10 +68,12 @@ label{
 /* ANIMASI */
 
 @keyframes FadeIn {
-    from{
+    from {
         opacity: 0;
         transform: translateY(-100%);
-    } to{
+    }
+
+    to {
         opacity: 1;
         transform: translateY(0);
     }

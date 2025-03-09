@@ -3,19 +3,16 @@
 use App\Http\Controllers\Admin\BrochureController;
 use App\Http\Controllers\Admin\UnitController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Schema;
-
-// Login
 
 
 //Admin dashboard
-Route::prefix("admin")->group(function () {
-    // Admin Dashboard
-    Route::get('/', [UnitController::class, 'index'])->name('admin.units.index');
+Route::prefix("admin")->middleware(['auth'])->group(function () {
 
-    // Unit
+    // Admin Dashboard  
+    Route::get('/dashboard', [UnitController::class, 'index'])->name('admin.dashboard');
 
-    Route::prefix("units")->group(function () {
+    // Unit Management (wajib login)
+    Route::prefix("units")->middleware(['auth'])->group(function () {
         Route::get('/', [UnitController::class, 'unit'])->name('admin.units.unit');
         Route::post('/add', [UnitController::class, 'store'])->name('admin.units.store');
         Route::get('/{id}/edit', [UnitController::class, 'edit'])->name('admin.units.edit');
@@ -23,8 +20,8 @@ Route::prefix("admin")->group(function () {
         Route::delete('/{id}', [UnitController::class, 'destroy'])->name('admin.units.destroy');
     });
 
-    // Brochure
-    Route::prefix('brochure')->group(function () {
+    // Brochure Management (wajib login)
+    Route::prefix('brochure')->middleware(['auth'])->group(function () {
         Route::get('/', [BrochureController::class, 'index'])->name('admin.brochure.index');
         Route::post('/update', [BrochureController::class, 'updateBrochure'])->name('admin.brochure.update');
     });

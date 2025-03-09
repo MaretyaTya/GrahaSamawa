@@ -24,10 +24,8 @@ class UnitController extends Controller
         // Counting Visitor
         $totalVisitors = Cache::get('total_visitors', 0); // saved cache
 
-
         // Brochure
         $brochure = Brochure::all();
-        // $brochure = Brochure::where('is_active', true)->latest()->first();
 
         // dd($units);
 
@@ -180,26 +178,4 @@ class UnitController extends Controller
 
         return redirect()->route('admin.units.unit')->with('success', 'Unit berhasil dihapus.');
     }
-
-    // public function updateBrochure(Request $request)
-    // {
-    //     $request->validate([
-    //         'pdf_file' => 'required|mimes:pdf|max:2048',
-    //     ]);
-
-    //     $file = $request->file('pdf_file');
-    //     $path = $file->store('pdf', 'public'); // Simpan di storage/app/public/pdf/
-
-    //     // Hapus brosur lama (jika ada)
-    //     $existingBrochure = Brochure::latest()->first();
-    //     if ($existingBrochure) {
-    //         Storage::delete('public/' . $existingBrochure->file_path);
-    //         $existingBrochure->delete();
-    //     }
-
-    //     // Simpan brosur baru
-    //     Brochure::create(['file_path' => $path]);
-
-    //     return back()->with('success', 'Brosur berhasil diperbarui!');
-    // }
 }
