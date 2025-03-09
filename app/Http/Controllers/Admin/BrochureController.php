@@ -48,14 +48,15 @@ class BrochureController extends Controller
             return redirect()->back()->with('error', 'Brosur tidak ditemukan.');
         }
 
+        // Tambah jumlah unduhan
+        $brochure->increment('download_count');
+
+        // Path file di dalam storage
         $filePath = storage_path("app/public/{$brochure->file_path}");
 
         if (!file_exists($filePath)) {
             return redirect()->back()->with('error', 'File brosur tidak ditemukan di penyimpanan.');
         }
-
-        // Tambah jumlah unduhan
-        $brochure->increment('download_count');
 
         return response()->download($filePath, "GrahaSamawa_Brosur.pdf");
     }

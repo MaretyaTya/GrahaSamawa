@@ -9,7 +9,6 @@
             <div class="modal-body">
                 <div id="carouselDetail" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" id="carousel-inner">
-                        
                     </div>
 
                     <!-- Tombol Navigasi -->

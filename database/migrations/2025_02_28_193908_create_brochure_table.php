@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('brochure', function (Blueprint $table) {
             $table->id();
-            $table->string('file_path'); // Menyimpan lokasi file PDF
+            $table->string('file_path');
+            $table->unsignedBigInteger('download_count')->default(0)->after('file_path');
             $table->timestamps();
         });
     }
@@ -23,6 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('brochure');
+        Schema::table('brochures', function (Blueprint $table) {
+            $table->dropColumn('download_count');
+        });
     }
 };

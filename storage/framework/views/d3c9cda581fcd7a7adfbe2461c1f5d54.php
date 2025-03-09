@@ -42,10 +42,13 @@
                 <div class="card-body card-unit">
                     <div class="row">
                         <div class="col-6 text-start">
-                            <?php $__currentLoopData = $brochure; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <h1><?php echo e($b->download_count); ?></h1>
+                            <?php if($brochure): ?>
+                                <h1><?php echo e($brochure->download_count); ?></h1>
                                 <p>Total Unduh Brosur</p>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php else: ?>
+                                <h1>0</h1>
+                                <p>Total Unduh Brosur</p>
+                            <?php endif; ?>
                         </div>
                         <div class="col-6 text-end icon-unit">
                             <i class="bi bi-file-earmark-arrow-down-fill" style="font-size: 56px;"></i>

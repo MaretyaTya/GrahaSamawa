@@ -48,10 +48,13 @@
                 <div class="card-body card-unit">
                     <div class="row">
                         <div class="col-6 text-start">
-                            @foreach ($brochure as $b)
-                                <h1>{{ $b->download_count }}</h1>
+                            @if ($brochure)
+                                <h1>{{ $brochure->download_count }}</h1>
                                 <p>Total Unduh Brosur</p>
-                            @endforeach
+                            @else
+                                <h1>0</h1>
+                                <p>Total Unduh Brosur</p>
+                            @endif
                         </div>
                         <div class="col-6 text-end icon-unit">
                             <i class="bi bi-file-earmark-arrow-down-fill" style="font-size: 56px;"></i>

@@ -20,6 +20,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     // Brochure
     Route::get('/brochure', [BrochureController::class, 'index'])->name('admin.units.brochure');
     Route::post('/brochure/update', [BrochureController::class, 'updateBrochure'])->name('admin.brochure.update');
+    Route::get('/admin/brochure/download/{id}', [BrochureController::class, 'downloadBrochure'])
+        ->name('admin.brochure.download');
 });
 
 //Brochure Download

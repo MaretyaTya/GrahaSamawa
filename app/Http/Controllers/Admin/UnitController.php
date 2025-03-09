@@ -30,7 +30,8 @@ class UnitController extends Controller
         $visitorData = Visitor::orderBy('year', 'desc')->orderBy('month', 'desc')->get();
 
         // Brochure
-        $brochure = Brochure::all();
+        // $brochure = Brochure::all();
+        $brochure = Brochure::where('is_active', true)->first() ?? null;
 
         // dd($units);
 
