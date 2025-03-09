@@ -6,8 +6,8 @@
     </div>
     <hr>
     <div class="text-end mb-3">
-        <button href="#" class="btn btn-success btn-sm text-white" data-bs-toggle="modal"
-            data-bs-target="#modalDataUnit"><i class="bi bi-plus-lg"></i> Tambah Data</button>
+        <button href="#" class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#modalDataUnit"><i
+                class="bi bi-plus-lg"></i> Tambah Data</button>
     </div>
 
     <div class="card border-1">
@@ -68,7 +68,7 @@
                                             <i class="bi bi-trash"></i><span> Hapus</span>
                                         </button>
                                     </form>
-                                </div>  
+                                </div>
                             </td>
                         </tr>
                     @endforeach

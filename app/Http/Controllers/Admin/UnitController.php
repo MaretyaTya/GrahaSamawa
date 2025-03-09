@@ -6,6 +6,8 @@ use App\Models\Unit;
 use App\Models\Image;
 use App\Models\Brochure;
 use App\Http\Controllers\Controller;
+use App\Models\Visitor;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
@@ -22,14 +24,17 @@ class UnitController extends Controller
         $totalUnits = Unit::count();
 
         // Counting Visitor
-        $totalVisitors = Cache::get('total_visitors', 0); // saved cache
+        $totalVisitors = Visitor::where('month', Carbon::now()->month)
+            ->where('year', Carbon::now()->year)
+            ->sum('total');
+        $visitorData = Visitor::orderBy('year', 'desc')->orderBy('month', 'desc')->get();
 
         // Brochure
         $brochure = Brochure::all();
 
         // dd($units);
 
-        return view('admin.units.index', compact('units', 'totalUnits', 'totalVisitors', 'brochure'));
+        return view('admin.units.index', compact('units', 'totalUnits', 'totalVisitors', 'visitorData', 'brochure'));
     }
 
     public function unit()

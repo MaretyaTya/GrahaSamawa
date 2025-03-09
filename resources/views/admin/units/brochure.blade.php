@@ -19,6 +19,7 @@
         </form>
 
         <br>
+        <hr>
         <br>
 
         <div class="card border-1">
@@ -40,7 +41,8 @@
                         @foreach ($brochure as $index => $b)
                             <tr>
                                 <td>{{ $index + 1 }}</td>
-                                <td><a href="{{ asset('storage/' . $b->file_path) }}" target="_blank">{{ $b->file_path }}</a></td>
+                                <td><a href="{{ asset('storage/' . $b->file_path) }}"
+                                        target="_blank">{{ $b->file_path }}</a></td>
                                 <td>{{ $b->download_count }}</td>
                                 <td>
                                     @if ($b->is_active)

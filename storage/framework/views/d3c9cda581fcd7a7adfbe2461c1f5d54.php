@@ -57,8 +57,7 @@
         </div>
     </div>
 
-    <hr>
-
+    
     <div class="card border-1">
 
         <div class="card-header title-card d-flex">
@@ -106,7 +105,37 @@
 
             
             
+        </div>
+    </div>
 
+    <br>
+
+    
+    <div class="card title-card d-flex">
+        <div class="card-header">
+            <h4>Data Pengunjung Per Bulan</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Bulan</th>
+                        <th scope="col">Tahun</th>
+                        <th scope="col">Total Pengunjung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $__currentLoopData = $visitorData; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $visitor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <tr>
+                            <th scope="row"><?php echo e($index + 1); ?></th>
+                            <td><?php echo e(DateTime::createFromFormat('!m', $visitor->month)->format('F')); ?></td>
+                            <td><?php echo e($visitor->year); ?></td>
+                            <td><?php echo e($visitor->total); ?></td>
+                        </tr>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </tbody>
+            </table>
         </div>
     </div>
 <?php $__env->stopSection(); ?>
