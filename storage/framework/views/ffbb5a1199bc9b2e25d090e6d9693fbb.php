@@ -108,34 +108,7 @@
         <script src="<?php echo e(asset('js/script.js')); ?>"></script>
 
         <!-- Preview Gambar -->
-        <script>
-            function previewImages() {
-                let previewContainer = document.getElementById('imagePreview');
-                previewContainer.innerHTML = ''; // Kosongkan preview sebelum menambahkan yang baru
-
-                let files = document.getElementById('gambarUnit').files;
-
-                if (files.length > 10) {
-                    alert("Maksimal 10 gambar yang dapat diunggah!");
-                    document.getElementById('gambarUnit').value = "";
-                    return;
-                }
-
-                for (let i = 0; i < files.length; i++) {
-                    let file = files[i];
-                    let reader = new FileReader();
-                    reader.onload = function(e) {
-                        let img = document.createElement('img');
-                        img.src = e.target.result;
-                        img.className = 'img-thumbnail m-1';
-                        img.style.width = '100px';
-                        img.style.height = '100px';
-                        previewContainer.appendChild(img);
-                    }
-                    reader.readAsDataURL(file);
-                }
-            }
-        </script>
+        
 
         <script>
             // Update modal fields when edit button is clicked

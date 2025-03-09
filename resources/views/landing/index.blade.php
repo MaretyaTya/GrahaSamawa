@@ -15,9 +15,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
-        
-        
-        
+
+
+
         <!-- LINK CSS DAN JS -->
         <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
         <script src="{{ asset('js/script.js') }}"></script>
@@ -52,7 +52,7 @@
 
             <section id="hero" class="hero">
                 <video autoplay muted loop class="hero-video">
-                    <source src="https://pixeldrain.com/api/file/3ZSazASt" type="video/mp4">
+                    <source src="{{ url('videos/GrahaSamawa.mp4') }}" type="video/mp4">
                 </video>
 
                 <div class="container">
@@ -94,10 +94,12 @@
                                             <div class="carousel-inner">
                                                 @foreach ($unit->images as $key => $image)
                                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                                        <a href="{{ asset('storage/' . $image->image_path) }}" data-toggle="lightbox" data-gallery="gallery" data-size="fullscreen">
+                                                        <a href="{{ asset('storage/' . $image->image_path) }}"
+                                                            data-toggle="lightbox" data-gallery="gallery"
+                                                            data-size="fullscreen">
                                                             <img src="{{ asset('storage/' . $image->image_path) }}"
-                                                            alt="{{ $unit->nama_unit }}" class="card-img-top"
-                                                            style="width: 100%;height:225px; max-height: 225px; object-fit: cover;">
+                                                                alt="{{ $unit->nama_unit }}" class="card-img-top"
+                                                                style="width: 100%;height:225px; max-height: 225px; object-fit: cover;">
                                                         </a>
                                                     </div>
                                                 @endforeach
@@ -424,7 +426,7 @@
 
             });
         </script>
-        
+
     </body>
 
 

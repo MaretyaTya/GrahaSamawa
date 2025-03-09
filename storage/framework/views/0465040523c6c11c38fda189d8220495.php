@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="text-end mb-3">
+    <div class="text-start mb-3">
         <button href="#" class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#modalDataUnit"><i
                 class="bi bi-plus-lg"></i> Tambah Data</button>
     </div>
@@ -53,12 +53,58 @@
                             <td>
                                 <?php if($unit->images->isNotEmpty()): ?>
                                     <img src="<?php echo e(asset('storage/' . $unit->images->first()->image_path)); ?>"
-                                        alt="<?php echo e($unit->nama_unit); ?>" style="width:100px;height:100px; object-fit: cover;">
-                                    
+                                        alt="<?php echo e($unit->nama_unit); ?>"
+                                        style="width:100px;height:100px; object-fit: cover; cursor: pointer;"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal-<?php echo e($unit->id); ?>">
+
+                                    <!-- Modal untuk menampilkan semua gambar -->
+                                    <div class="modal fade" id="imageModal-<?php echo e($unit->id); ?>" tabindex="-1"
+                                        aria-labelledby="imageModalLabel-<?php echo e($unit->id); ?>" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="imageModalLabel-<?php echo e($unit->id); ?>">Gambar
+                                                        Unit: <?php echo e($unit->nama_unit); ?></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div id="carousel-<?php echo e($unit->id); ?>" class="carousel slide"
+                                                        data-bs-ride="carousel">
+                                                        <div class="carousel-inner">
+                                                            <?php $__currentLoopData = $unit->images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                <div class="carousel-item <?php echo e($key == 0 ? 'active' : ''); ?>">
+                                                                    <img src="<?php echo e(asset('storage/' . $image->image_path)); ?>"
+                                                                        class="d-block w-100"
+                                                                        style="border-radius: 10px; max-height: 500px; object-fit: cover;"
+                                                                        alt="<?php echo e($unit->nama_unit); ?>">
+                                                                </div>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        </div>
+                                                        <button class="carousel-control-prev" type="button"
+                                                            data-bs-target="#carousel-<?php echo e($unit->id); ?>"
+                                                            data-bs-slide="prev">
+                                                            <span class="carousel-control-prev-icon"
+                                                                aria-hidden="true"></span>
+                                                            <span class="visually-hidden">Previous</span>
+                                                        </button>
+                                                        <button class="carousel-control-next" type="button"
+                                                            data-bs-target="#carousel-<?php echo e($unit->id); ?>"
+                                                            data-bs-slide="next">
+                                                            <span class="carousel-control-next-icon"
+                                                                aria-hidden="true"></span>
+                                                            <span class="visually-hidden">Next</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php else: ?>
                                     <p class="text-muted">Tidak ada gambar</p>
                                 <?php endif; ?>
                             </td>
+
                             <td><?php echo e($unit->nama_unit); ?></td>
                             <td>Rp <?php echo e(number_format($unit->harga, 0, ',', '.')); ?></td>
                             <td><?php echo e($unit->kamar_tidur); ?></td>

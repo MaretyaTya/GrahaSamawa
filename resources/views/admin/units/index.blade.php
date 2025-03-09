@@ -73,7 +73,7 @@
 
         <div class="card-header title-card d-flex">
             <div class="me-2">
-                <span>Riwayat Perubahan</span>
+                <span>Data Unit Properti Keseluruhan</span>
             </div>
             <div>
                 <a href="/admin/units" class="btn btn-info btn-sm text-bg-info">Lihat selengkapnya</a>

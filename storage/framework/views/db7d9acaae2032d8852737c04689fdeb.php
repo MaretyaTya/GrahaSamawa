@@ -28,10 +28,10 @@
         <form action="<?php echo e(route('admin.brochure.update')); ?>" method="POST" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <div class="mb-3">
-                <label for="pdfFile" class="form-label">Upload Brosur (PDF)</label>
+                <label for="pdfFile" class="form-label">Unggah Brosur (PDF)</label>
                 <input type="file" name="pdf_file" id="pdfFile" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-success">Update Brosur</button>
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
 
         <br>
@@ -43,10 +43,10 @@
                 <span style="font-size:26px; font-weight: 500;">Daftar Brosur yang Pernah Diupload</span>
             </div>
             <div class="card-body">
-                <table class="table">
+                <table id="data-unit" class="table" style="width: 100%;">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th>#</th>
                             <th>File Path</th>
                             <th>Jumlah Unduhan</th>
                             <th>Status</th>

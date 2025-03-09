@@ -54,12 +54,58 @@
                             <td>
                                 @if ($unit->images->isNotEmpty())
                                     <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
-                                        alt="{{ $unit->nama_unit }}" style="width:100px;height:100px; object-fit: cover;">
-                                    {{-- {{ dd($unit->images->first()->image_path) }} --}}
+                                        alt="{{ $unit->nama_unit }}"
+                                        style="width:100px;height:100px; object-fit: cover; cursor: pointer;"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal-{{ $unit->id }}">
+
+                                    <!-- Modal untuk menampilkan semua gambar -->
+                                    <div class="modal fade" id="imageModal-{{ $unit->id }}" tabindex="-1"
+                                        aria-labelledby="imageModalLabel-{{ $unit->id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="imageModalLabel-{{ $unit->id }}">Gambar
+                                                        Unit: {{ $unit->nama_unit }}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div id="carousel-{{ $unit->id }}" class="carousel slide"
+                                                        data-bs-ride="carousel">
+                                                        <div class="carousel-inner">
+                                                            @foreach ($unit->images as $key => $image)
+                                                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                                                    <img src="{{ asset('storage/' . $image->image_path) }}"
+                                                                        class="d-block w-100"
+                                                                        style="border-radius: 10px; max-height: 500px; object-fit: cover;"
+                                                                        alt="{{ $unit->nama_unit }}">
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                        <button class="carousel-control-prev" type="button"
+                                                            data-bs-target="#carousel-{{ $unit->id }}"
+                                                            data-bs-slide="prev">
+                                                            <span class="carousel-control-prev-icon"
+                                                                aria-hidden="true"></span>
+                                                            <span class="visually-hidden">Previous</span>
+                                                        </button>
+                                                        <button class="carousel-control-next" type="button"
+                                                            data-bs-target="#carousel-{{ $unit->id }}"
+                                                            data-bs-slide="next">
+                                                            <span class="carousel-control-next-icon"
+                                                                aria-hidden="true"></span>
+                                                            <span class="visually-hidden">Next</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 @else
                                     <p class="text-muted">Tidak ada gambar</p>
                                 @endif
                             </td>
+
                             <td>{{ $unit->nama_unit }}</td>
                             <td>Rp {{ number_format($unit->harga, 0, ',', '.') }}</td>
                             <td>{{ $unit->kamar_tidur }}</td>
