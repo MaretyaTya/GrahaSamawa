@@ -350,6 +350,12 @@ h6 {
     font-weight: 400;
 }
 
+.lokasi li{
+    color: var(--warna-primary);
+    font-family: var(--second-font);
+    font-weight: 400;
+}
+
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .mediasosial {
@@ -421,11 +427,11 @@ h6 {
 }
 
 .footer a{
-    transition: text-shadow 0.5s ease-in-out;
+    color: var(--warna-putih);
 }
 
 .footer a:hover{
-    text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF;
+    text-decoration: underline;
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */

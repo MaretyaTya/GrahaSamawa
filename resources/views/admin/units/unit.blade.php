@@ -5,6 +5,25 @@
         <h2>Data Unit</h2>
     </div>
     <hr>
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+    <div class="alert alert-warning" role="alert">
+        <strong><em>Catatan :</em></strong>
+        <div class="catatan mt-2">
+            <ul>
+                <li>- Upload untuk gambar unit harus beberapa gambar sekaligus <strong>(maks. 10 gambar)</strong>.</li>
+                <li>- Tidak bisa melakukan penghapusan pada salah satu gambar, harus diganti secara keseluruhan.</li>
+                <li>- Data yang sudah dihapus tidak bisa direstore atau dikembalikan.</li>
+                <li>- Data grafik masih belum tersedia untuk dijadikan file.</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="text-end mb-3">
         <button href="#" class="btn btn-success btn-sm text-white" data-bs-toggle="modal"
             data-bs-target="#modalDataUnit"><i class="bi bi-plus-lg"></i> Tambah Data</button>
