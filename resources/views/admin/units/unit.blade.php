@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="text-end mb-3">
+    <div class="text-start mb-3">
         <button href="#" class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#modalDataUnit"><i
                 class="bi bi-plus-lg"></i> Tambah Data</button>
     </div>

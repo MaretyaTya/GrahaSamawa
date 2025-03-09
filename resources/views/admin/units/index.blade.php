@@ -81,7 +81,7 @@
         </div>
 
         <div class="card-body">
-            <table class="table">
+            <table class="table table-dashboard">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -139,7 +139,7 @@
             <h4>Data Pengunjung Per Bulan</h4>
         </div>
         <div class="card-body">
-            <table class="table table-striped">
+            <table class="table table-striped table-dashboard">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

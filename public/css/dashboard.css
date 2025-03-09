@@ -188,6 +188,14 @@ p {
     min-width: 100px;
 }
 
+#data-unit th, td{
+    text-align: center;
+}
+
+.table-dashboard th, td{
+    text-align: center;
+}
+
 @media (min-width:768px) {
     .content {
         max-width: auto;

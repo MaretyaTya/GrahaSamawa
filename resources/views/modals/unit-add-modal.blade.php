@@ -18,7 +18,7 @@
                                     gambar)</label>
                                 <input id="gambarUnit" type="file" name="images[]" multiple accept="image/*"
                                     class="form-control" onchange="previewImages()">
-                                <div id="imagePerview" class="mt-2 d-flex flex-wrap"></div>
+                                <img id="imagePreview" src="#" alt="Preview Gambar" style="max-width: 300px; display: none;"></img>
                             </div>
                         </div>
                         <div class="col-md-12 mb-4">

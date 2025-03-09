@@ -11,10 +11,13 @@
         <!-- BOOTSTRAP CDN -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.12.0/dist/index.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
-
+        
+        
+        
         <!-- LINK CSS DAN JS -->
         <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
         <script src="{{ asset('js/script.js') }}"></script>
@@ -84,17 +87,18 @@
                         @if (isset($units) && count($units) > 0)
                             @foreach ($units as $unit)
                                 <div class="col-12 col-lg-6 col-xl-4">
-                                    <div class="card shadow-lg mb-5 rounded">
+                                    <div class="card shadow-lg mb-5">
 
                                         {{-- Carousel Image unit --}}
-                                        <div id="carousel-{{ $unit->id }}" class="carousel slide"
-                                            data-bs-ride="carousel">
+                                        <div id="carousel-{{ $unit->id }}" class="carousel slide">
                                             <div class="carousel-inner">
                                                 @foreach ($unit->images as $key => $image)
                                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                                        <img src="{{ asset('storage/' . $image->image_path) }}"
+                                                        <a href="{{ asset('storage/' . $image->image_path) }}" data-toggle="lightbox" data-gallery="gallery" data-size="fullscreen">
+                                                            <img src="{{ asset('storage/' . $image->image_path) }}"
                                                             alt="{{ $unit->nama_unit }}" class="card-img-top"
-                                                            style="max-height: 225px; object-fit: cover;">
+                                                            style="width: 100%;height:225px; max-height: 225px; object-fit: cover;">
+                                                        </a>
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -264,9 +268,9 @@
                 </div>
             </section>
 
-            <footer id="footer" class="footer section position-relative d-flex flex-column align-items-center"
+            <footer id="footer" class="footer section position-relative d-flex flex-column"
                 style="margin-top: 250px; font-size: 24px;">
-                <div class="sosial-media p-4">
+                <div class="sosial-media p-4 d-flex flex-column justify-content-start">
                     <div class="text-start">
                         <h5 style="font-size: 1.1em;">Sosial Media</h5>
                         <p style="font-size: .7em; font-weight: 400;">Ikuti kami untuk mendapatkan informasi seputar
@@ -357,13 +361,15 @@
                     </div>
                 </div>
                 <div class="copyright">
-                    <div class="container copyright text-center mt-4 p-4">
+                    <div class="text-end p-4">
                         <p style="font-size: .6em;">&copy; Copyright <strong>Testing Website</strong></p>
                     </div>
                 </div>
             </footer>
         </main>
 
+        <!-- LIGHTBOX (ZOOM IMAGE) -->
+        <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
         <script>
             // Update modal fields when edit button is clicked
@@ -418,8 +424,7 @@
 
             });
         </script>
-
-
+        
     </body>
 
 
