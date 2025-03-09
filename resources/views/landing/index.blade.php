@@ -85,36 +85,32 @@
                             @foreach ($units as $unit)
                                 <div class="col-12 col-lg-6 col-xl-4">
                                     <div class="card shadow-lg mb-5 rounded">
-                                        <div id="testCarousel" class="carousel slide">
+
+                                        {{-- Carousel Image unit --}}
+                                        <div id="carousel-{{ $unit->id }}" class="carousel slide"
+                                            data-bs-ride="carousel">
                                             <div class="carousel-inner">
-                                                <!-- PENGAMBILAN DATA IMAGE BUAT SLIDESHOW DISINI -->
-                                                <div class="carousel-item active">
-                                                    <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
-                                                    alt="{{ $unit->nama_unit }}" style="max-height: 225px; object-fit: cover;"
-                                                    class="card-img-top">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
-                                                    alt="{{ $unit->nama_unit }}" style="max-height: 225px; object-fit: cover;"
-                                                    class="card-img-top">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="{{ asset('storage/' . $unit->images->first()->image_path) }}"
-                                                    alt="{{ $unit->nama_unit }}" style="max-height: 225px; object-fit: cover;"
-                                                    class="card-img-top">
-                                                </div>
+                                                @foreach ($unit->images as $key => $image)
+                                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                                        <img src="{{ asset('storage/' . $image->image_path) }}"
+                                                            alt="{{ $unit->nama_unit }}" class="card-img-top"
+                                                            style="max-height: 225px; object-fit: cover;">
+                                                    </div>
+                                                @endforeach
                                             </div>
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#testCarousel" data-bs-slide="prev">
+                                            <!-- Navigasi Carousel -->
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#carousel-{{ $unit->id }}" data-bs-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                 <span class="visually-hidden">Previous</span>
                                             </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#testCarousel" data-bs-slide="next">
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#carousel-{{ $unit->id }}" data-bs-slide="next">
                                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                 <span class="visually-hidden">Next</span>
                                             </button>
                                         </div>
-                                        {{-- <img src="{{ asset('images/BG.jpg') }}" class="card-img-top" alt=""> --}}
-                                        
+
                                         <div class="card-body">
                                             <div class="title">
                                                 <div class="row row-cols-2">
@@ -176,7 +172,8 @@
                                             </div>
                                             <button type="button" class="btn btn-outline-primary mt-4"
                                                 data-bs-toggle="modal" data-bs-target="#detailUnitModal"
-                                                data-unit="{{ $unit }}" style="width: 100%;">Detail</button>
+                                                data-unit="{{ $unit }}" style="width: 100%;">Detail
+                                            </button>
                                             <a href="https://wa.me/62895366481314" target="_blank"
                                                 class="btn btn-primary mt-2" style="width: 100%;">Hubungi</a>
                                         </div>
@@ -196,9 +193,10 @@
                     <div class="d-flex justify-content-center judul-section">
                         <h2 class="">Tentang Kami</h2>
                     </div>
-                    <p class="pt-2">Graha Samawa adalah perusahaan kontraktor dan pengembang properti. Graha Samawa
-                        didirikan pada tahun 2025, seorang pengusaha muda yang memiliki banyak ide inovatif dalam
-                        menciptakan kawasan hunian yang memadukan keindahan, keseimbangan lingkungan, dan kenyamanan
+                    <p class="pt-2 text-center">Graha Samawa adalah
+                        hunian baru dengan konsep desain
+                        minimalis. Menawarkan kawasan hunian strategis yang
+                        memadukan keindahan, keseimbangan lingkungan, dan kenyamanan
                         bagi penghuninya.</p>
                 </div>
             </section>
@@ -247,7 +245,8 @@
                             <div class="d-flex justify-content-center judul-section">
                                 <h2>Lokasi Kami</h2>
                             </div>
-                            <p><strong>Alamat Graha Samawa</strong> : Watu Lanyu, Oro-Oro Ombowetan, Kec. Rembang, Pasuruan, Jawa Timur 67152</p>
+                            <p><strong>Alamat Graha Samawa</strong> : Watu Lanyu, Oro-Oro Ombowetan, Kec. Rembang,
+                                Pasuruan, Jawa Timur 67152</p>
                             <p>Hunian nyaman dengan akses mudah ke berbagai fasilitas penting, karena Terletak di jalur
                                 utama.</p>
                             <ul>
@@ -365,6 +364,7 @@
             </footer>
         </main>
 
+
         <script>
             // Update modal fields when edit button is clicked
             $('#detailUnitModal').on('show.bs.modal', function(event) {
@@ -389,8 +389,35 @@
                 modal.find('#luas_tanah').text(`${unit.luas_tanah}m²`);
                 modal.find('#luas_bangunan').text(`${unit.luas_bangunan}m²`);
                 modal.find('#spesifikasi').text(unit.spesifikasi);
+
+                // Handle carousel untuk gambar unit
+                var carouselInner = modal.find("#carousel-inner");
+                carouselInner.html(""); // Hapus gambar lama sebelum update
+
+                if (unit.images && unit.images.length > 0) {
+                    unit.images.forEach((image, index) => {
+                        var activeClass = index === 0 ? "active" : ""; // Hanya gambar pertama yang aktif
+                        var carouselItem = `
+                    <div class="carousel-item ${activeClass}">
+                        <img src="/storage/${image.image_path}" class="d-block w-100"
+                             style="border-radius: 10px; max-height: 300px; object-fit: cover;"
+                             alt="${unit.nama_unit}">
+                    </div>
+                `;
+                        carouselInner.append(carouselItem); // Tambahkan gambar ke dalam carousel
+                    });
+                } else {
+                    // Jika tidak ada gambar, tampilkan gambar default
+                    carouselInner.html(`
+                <div class="carousel-item active">
+                    <img src="/images/no-image.jpg" class="d-block w-100"
+                         style="border-radius: 10px; max-height: 300px; object-fit: cover;">
+                </div>
+            `);
+                }
             });
         </script>
+
 
     </body>
 

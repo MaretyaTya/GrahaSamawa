@@ -1,15 +1,30 @@
 <!-- MODAL DETAIL UNIT -->
 <div class="modal fade" id="detailUnitModal" tabindex="-1" aria-labelledby="detailUnitModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg h-50">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="detailUnitModal">Detail Properti</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div>
-                    <img src="<?php echo e(asset('storage/' . $unit->images->first()->image_path)); ?>" class="d-block w-100" style="border-radius: 10px; max-height: 300px; object-fit: cover;" alt="<?php echo e($unit->nama_unit); ?>">
+                <div id="carouselDetail" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" id="carousel-inner">
+                        
+                    </div>
+
+                    <!-- Tombol Navigasi -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselDetail"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselDetail"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+
                 <div class="row row-cols-2 mt-3">
                     <div class="col-12 col-md-6">
                         <h5 id="nama_unit" class="text-dark mb-4"> Nama Unit </h5>
@@ -84,7 +99,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="https://wa.me/62895366481314" target="_blank" class="btn btn-primary" style="width: 50%;">Hubungi</a>
+                <a href="https://wa.me/62895366481314" target="_blank" class="btn btn-primary"
+                    style="width: 50%;">Hubungi</a>
             </div>
         </div>
     </div>

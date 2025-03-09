@@ -4,6 +4,7 @@ sidebarToggle.addEventListener("click", function(){
     document.querySelector("#sidebar").classList.toggle("collapsed");
 });
 
+// Button Login
 document.addEventListener("DOMContentLoaded", function () {
     let loginButton = document.querySelector(".custom-btn");
 
@@ -16,9 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// ALERT AUTO HILANG
+// Notif Alert Auto
 window.setTimeout(function(){
     $("#alert").fadeTo(500, 0).slideUp(500, function(){
         $(this).remove();
     });
 }, 4000);
+
+

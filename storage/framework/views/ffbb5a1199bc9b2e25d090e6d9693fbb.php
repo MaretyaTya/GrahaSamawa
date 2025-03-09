@@ -92,7 +92,7 @@
                     </div>
                 </main>
 
-                <hr>
+
                 <!-- FOOTER -->
                 <div class="footer">
                     <div class="container-fluid text-start pb-3">

@@ -17,20 +17,22 @@
             <strong><em>Catatan :</em></strong>
             <div class="catatan mt-2">
                 <ul>
-                    <li>- Melakukan update brosur akan secara otomatis menimpa brosur yang sudah pernah di upload sebelumnya.</li>
-                    <li>- Brosur yang sudah tertimpa tidak bisa dikembalikan. Jika ingin mengembalikan brosur sebelumnya maka harus upload ulang file brosur tersebut.</li>
+                    <li>- Melakukan update brosur akan secara otomatis menimpa brosur yang sudah pernah di upload
+                        sebelumnya.</li>
+                    <li>- Brosur yang sudah tertimpa tidak bisa dikembalikan. Jika ingin mengembalikan brosur sebelumnya
+                        maka harus upload ulang file brosur tersebut.</li>
                     <li>- File brosur harus berekstensi <strong>.pdf</strong>.</li>
                 </ul>
             </div>
         </div>
-        
+
         <form action="{{ route('admin.brochure.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="pdfFile" class="form-label">Upload Brosur (PDF)</label>
                 <input type="file" name="pdf_file" id="pdfFile" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Update Brosur</button>
+            <button type="submit" class="btn btn-success">Update Brosur</button>
         </form>
 
         <br>

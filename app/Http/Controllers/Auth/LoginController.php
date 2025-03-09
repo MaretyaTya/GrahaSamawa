@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -38,7 +37,6 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        // Auth::logoutOtherDevices($currentPassword);
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
