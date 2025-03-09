@@ -6,9 +6,24 @@
         <hr>
 
         @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         @endif
 
+
+        <div class="alert alert-warning" role="alert">
+            <strong><em>Catatan :</em></strong>
+            <div class="catatan mt-2">
+                <ul>
+                    <li>- Melakukan update brosur akan secara otomatis menimpa brosur yang sudah pernah di upload sebelumnya.</li>
+                    <li>- Brosur yang sudah tertimpa tidak bisa dikembalikan. Jika ingin mengembalikan brosur sebelumnya maka harus upload ulang file brosur tersebut.</li>
+                    <li>- File brosur harus berekstensi <strong>.pdf</strong>.</li>
+                </ul>
+            </div>
+        </div>
+        
         <form action="{{ route('admin.brochure.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">

@@ -73,7 +73,7 @@
                 <span>Riwayat Perubahan</span>
             </div>
             <div>
-                <a href="/admin/units" class="btn btn-info btn-sm text-white">Lihat selengkapnya</a>
+                <a href="/admin/units" class="btn btn-info btn-sm text-bg-info">Lihat selengkapnya</a>
             </div>
         </div>
 
