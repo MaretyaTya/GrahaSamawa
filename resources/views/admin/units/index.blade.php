@@ -65,8 +65,7 @@
         </div>
     </div>
 
-    <hr>
-
+    {{-- Tabel Unit Properti --}}
     <div class="card border-1">
 
         <div class="card-header title-card d-flex">
@@ -126,7 +125,37 @@
             {{-- <div class="d-flex justify-content-center">
             {{ $units->links() }}
         </div> --}}
+        </div>
+    </div>
 
+    <br>
+
+    {{-- Table Visitor --}}
+    <div class="card title-card d-flex">
+        <div class="card-header">
+            <h4>Data Pengunjung Per Bulan</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Bulan</th>
+                        <th scope="col">Tahun</th>
+                        <th scope="col">Total Pengunjung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($visitorData as $index => $visitor)
+                        <tr>
+                            <th scope="row">{{ $index + 1 }}</th>
+                            <td>{{ DateTime::createFromFormat('!m', $visitor->month)->format('F') }}</td>
+                            <td>{{ $visitor->year }}</td>
+                            <td>{{ $visitor->total }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 @endsection

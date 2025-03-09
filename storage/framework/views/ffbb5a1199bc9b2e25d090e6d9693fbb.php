@@ -70,6 +70,7 @@
                                 <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
                                     <i class="bi bi-person-circle avatar"></i>
                                 </a>
+
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -79,6 +80,7 @@
                                         <?php echo csrf_field(); ?>
                                     </form>
                                 </div>
+
                             </li>
                         </ul>
                     </div>

@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
     <div class="my-3">
         <h2>Upload / Update Brosur</h2>
@@ -19,6 +17,7 @@
         </form>
 
         <br>
+        <hr>
         <br>
 
         <div class="card border-1">
@@ -40,7 +39,8 @@
                         <?php $__currentLoopData = $brochure; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <td><?php echo e($index + 1); ?></td>
-                                <td><a href="<?php echo e(asset('storage/' . $b->file_path)); ?>" target="_blank"><?php echo e($b->file_path); ?></a></td>
+                                <td><a href="<?php echo e(asset('storage/' . $b->file_path)); ?>"
+                                        target="_blank"><?php echo e($b->file_path); ?></a></td>
                                 <td><?php echo e($b->download_count); ?></td>
                                 <td>
                                     <?php if($b->is_active): ?>
