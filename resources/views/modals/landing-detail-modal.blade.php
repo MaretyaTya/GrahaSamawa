@@ -1,6 +1,6 @@
 <!-- MODAL DETAIL UNIT -->
 <div class="modal fade" id="detailUnitModal" tabindex="-1" aria-labelledby="detailUnitModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg h-50">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="detailUnitModal">Detail Properti</h1>
