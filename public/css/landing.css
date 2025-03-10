@@ -463,3 +463,18 @@ h6 {
     background-color: var(--warna-second);
     border-color: var(--warna-second);
 }
+
+.modal img{
+    height: 225px;
+    max-height: 225px;
+}
+
+.modal .tipe-harga{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: var(--second-font);
+}
+
+.modal #harga_properti{
+    color: var(--warna-second);
+}
