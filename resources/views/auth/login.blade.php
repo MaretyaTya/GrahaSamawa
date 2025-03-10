@@ -5,7 +5,7 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="{{ asset('images/icon/ICON.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('images/icon/GRH_LingkarPutih.png') }}" type="image/x-icon">
         <title>Login - Admin Graha Samawa</title>
 
         <!-- BOOTSTRAP CDN -->
@@ -36,9 +36,9 @@
                 <div class="card-body py-5 px-md-5">
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-8 text-center">
-                            <img src="{{ asset('images/icon/GS_Black.png') }}" width="10%">
+                            <img src="{{ asset('images/icon/GRH_LingkarEmas.png') }}" width="15%">
                             <br>
-                            <h2 class="fw-bold mb-5">LOGIN ADMIN</h2>
+                            <h3 class="fw-bold mb-5">LOGIN ADMIN</h3>
                         </div>
                         <form action="{{ route('auth') }}" method="POST">
                             @csrf

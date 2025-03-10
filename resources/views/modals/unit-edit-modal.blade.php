@@ -20,9 +20,9 @@
                                 <div>
                                     <label for="gambarUnit" class="form-label">Pilih gambar unit (Maks. 10
                                         gambar)</label>
-                                    <input id="gambarUnit" type="file" name="images[]" multiple accept="image/*"
-                                        class="form-control" onchange="previewImages()">
-                                    <div id="imagePerview" class="mt-2 d-flex flex-wrap"></div>
+                                    <input type="file" name="images[]" multiple accept="image/*"
+                                        class="form-control gambarUnit">
+                                    <div class="imagePerview mt-2 d-flex flex-wrap"></div>
                                 </div>
                             </div>
 
@@ -91,3 +91,5 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ asset('js/script.js') }}"></script>

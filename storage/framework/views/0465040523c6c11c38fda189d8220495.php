@@ -137,12 +137,14 @@
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php echo $__env->make('modals.unit-add-modal', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                     <?php echo $__env->make('modals.unit-edit-modal', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
                 </tbody>
             </table>
         </div>
     </div>
-    <?php echo $__env->make('modals.unit-add-modal', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
 
     <!-- MODAL HAPUS -->
     <div class="modal fade" id="hapusUnit" tabindex="-1" aria-hidden="true">

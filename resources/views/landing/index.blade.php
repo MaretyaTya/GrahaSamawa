@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="{{ asset('images/icon/ICON.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('images/icon/GRH_LingkarPutih.png') }}" type="image/x-icon">
         <title>Graha Samawa</title>
 
         <!-- BOOTSTRAP CDN -->
@@ -39,7 +39,7 @@
             <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
                 <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-                    <img src="{{ asset('images/icon/GS_Black.png') }} " alt="">
+                    <img src="{{ asset('images/icon/GRH_Biru.png') }} " alt="">
                 </a>
 
                 <a href="https://wa.me/62895366481314" target="_blank" class="btn-whatsapp"><i
@@ -60,7 +60,7 @@
                         <div class="col-12">
                             <h2>Selamat Datang di</h2>
                             <h2>Graha Samawa</h2>
-                            <p>Lokasi area Bangil, Pasuruan</p>
+                            <p>Lokasi area Bangil, Pasuruan.</p>
 
                             @if ($brochure)
                                 <a href="{{ route('admin.brochure.download', $brochure->id) }}"
@@ -124,7 +124,7 @@
                                                         <h4 class="card-text">{{ $unit->nama_unit }}</h4>
                                                     </div>
                                                     <div class="col-lg-6 d-flex justify-content-end">
-                                                        <p class="card-text">Harga mulai dari</p>
+                                                        <p class="card-text">Harga Unit</p>
                                                     </div>
                                                     <div class="col-lg-12 col-12">
                                                         <h4 class="card-text d-flex justify-content-end value-properti">
@@ -139,7 +139,12 @@
                                                 <div class="row">
                                                     <div class="col-12 d-flex flex-row">
                                                         <div class="p-1">
-                                                            <svg fill="#000000" width="20px" height="20px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M5 10C3.347656 10 2 11.347656 2 13L2 26.8125C3.296875 25.6875 4.9375 24.777344 7 24.0625L7 20C7 17.339844 11.542969 17 15.5 17C19.457031 17 24 17.339844 24 20L24 22C24.335938 21.996094 24.65625 22 25 22C25.34375 22 25.664063 21.996094 26 22L26 20C26 17.339844 30.542969 17 34.5 17C38.457031 17 43 17.339844 43 20L43 24.03125C45.058594 24.742188 46.691406 25.671875 48 26.8125L48 13C48 11.347656 46.652344 10 45 10 Z M 25 24C5.90625 24 -0.015625 27.53125 0 37L50 37C50.015625 27.46875 44.09375 24 25 24 Z M 0 39L0 50L7 50L7 46C7 44.5625 7.5625 44 9 44L41 44C42.4375 44 43 44.5625 43 46L43 50L50 50L50 39Z"/></svg>
+                                                            <svg fill="#000000" width="20px" height="20px"
+                                                                viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                <path
+                                                                    d="M5 10C3.347656 10 2 11.347656 2 13L2 26.8125C3.296875 25.6875 4.9375 24.777344 7 24.0625L7 20C7 17.339844 11.542969 17 15.5 17C19.457031 17 24 17.339844 24 20L24 22C24.335938 21.996094 24.65625 22 25 22C25.34375 22 25.664063 21.996094 26 22L26 20C26 17.339844 30.542969 17 34.5 17C38.457031 17 43 17.339844 43 20L43 24.03125C45.058594 24.742188 46.691406 25.671875 48 26.8125L48 13C48 11.347656 46.652344 10 45 10 Z M 25 24C5.90625 24 -0.015625 27.53125 0 37L50 37C50.015625 27.46875 44.09375 24 25 24 Z M 0 39L0 50L7 50L7 46C7 44.5625 7.5625 44 9 44L41 44C42.4375 44 43 44.5625 43 46L43 50L50 50L50 39Z" />
+                                                            </svg>
                                                         </div>
                                                         <div class="p-2">
                                                             Kamar Tidur :
@@ -150,7 +155,12 @@
                                                     </div>
                                                     <div class="col-12 d-flex flex-row">
                                                         <div class="p-1">
-                                                            <svg fill="#000000" width="20px" height="20px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M32,384a95.4,95.4,0,0,0,32,71.09V496a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V480H384v16a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V455.09A95.4,95.4,0,0,0,480,384V336H32ZM496,256H80V69.25a21.26,21.26,0,0,1,36.28-15l19.27,19.26c-13.13,29.88-7.61,59.11,8.62,79.73l-.17.17A16,16,0,0,0,144,176l11.31,11.31a16,16,0,0,0,22.63,0L283.31,81.94a16,16,0,0,0,0-22.63L272,48a16,16,0,0,0-22.62,0l-.17.17c-20.62-16.23-49.83-21.75-79.73-8.62L150.22,20.28A69.25,69.25,0,0,0,32,69.25V256H16A16,16,0,0,0,0,272v16a16,16,0,0,0,16,16H496a16,16,0,0,0,16-16V272A16,16,0,0,0,496,256Z"/></svg>
+                                                            <svg fill="#000000" width="20px" height="20px"
+                                                                viewBox="0 0 512 512"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M32,384a95.4,95.4,0,0,0,32,71.09V496a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V480H384v16a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V455.09A95.4,95.4,0,0,0,480,384V336H32ZM496,256H80V69.25a21.26,21.26,0,0,1,36.28-15l19.27,19.26c-13.13,29.88-7.61,59.11,8.62,79.73l-.17.17A16,16,0,0,0,144,176l11.31,11.31a16,16,0,0,0,22.63,0L283.31,81.94a16,16,0,0,0,0-22.63L272,48a16,16,0,0,0-22.62,0l-.17.17c-20.62-16.23-49.83-21.75-79.73-8.62L150.22,20.28A69.25,69.25,0,0,0,32,69.25V256H16A16,16,0,0,0,0,272v16a16,16,0,0,0,16,16H496a16,16,0,0,0,16-16V272A16,16,0,0,0,496,256Z" />
+                                                            </svg>
                                                         </div>
                                                         <div class="p-2">
                                                             Kamar Mandi :
@@ -161,7 +171,12 @@
                                                     </div>
                                                     <div class="col-12 d-flex flex-row">
                                                         <div class="p-1">
-                                                            <svg fill="#000000" width="20px" height="20px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M41 0L9 0C7.347656 0 6 1.347656 6 3L6 50L44 50L44 3C44 1.347656 42.652344 0 41 0 Z M 28 23L28 17L37 17L37 23 Z M 37 27L37 33L28 33L28 27 Z M 28 13L28 7L37 7L37 13 Z M 13 23L13 17L22 17L22 23 Z M 22 27L22 33L13 33L13 27 Z M 13 13L13 7L22 7L22 13 Z M 13 37L22 37L22 43L13 43 Z M 28 37L37 37L37 48L28 48Z"/></svg>
+                                                            <svg fill="#000000" width="20px" height="20px"
+                                                                viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                <path
+                                                                    d="M41 0L9 0C7.347656 0 6 1.347656 6 3L6 50L44 50L44 3C44 1.347656 42.652344 0 41 0 Z M 28 23L28 17L37 17L37 23 Z M 37 27L37 33L28 33L28 27 Z M 28 13L28 7L37 7L37 13 Z M 13 23L13 17L22 17L22 23 Z M 22 27L22 33L13 33L13 27 Z M 13 13L13 7L22 7L22 13 Z M 13 37L22 37L22 43L13 43 Z M 28 37L37 37L37 48L28 48Z" />
+                                                            </svg>
                                                         </div>
                                                         <div class="p-2">
                                                             Luas Bangunan :
@@ -172,7 +187,32 @@
                                                     </div>
                                                     <div class="col-12 d-flex flex-row">
                                                         <div class="p-1">
-                                                            <svg fill="#000000" width="20px" height="20px" viewBox="0 0 24 24" id="maximize-size" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><path id="primary" d="M9,9,3.29,3.29M15,9l5.71-5.71M9,15,3.29,20.71m17.42,0L15,15" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-2" data-name="primary" d="M3,8V4A1,1,0,0,1,4,3H8" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-3" data-name="primary" d="M16,3h4a1,1,0,0,1,1,1V8" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-4" data-name="primary" d="M8,21H4a1,1,0,0,1-1-1V16" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-5" data-name="primary" d="M21,16v4a1,1,0,0,1-1,1H16" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></svg>
+                                                            <svg fill="#000000" width="20px" height="20px"
+                                                                viewBox="0 0 24 24" id="maximize-size"
+                                                                data-name="Flat Line"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="icon flat-line">
+                                                                <path id="primary"
+                                                                    d="M9,9,3.29,3.29M15,9l5.71-5.71M9,15,3.29,20.71m17.42,0L15,15"
+                                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                                </path>
+                                                                <path id="primary-2" data-name="primary"
+                                                                    d="M3,8V4A1,1,0,0,1,4,3H8"
+                                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                                </path>
+                                                                <path id="primary-3" data-name="primary"
+                                                                    d="M16,3h4a1,1,0,0,1,1,1V8"
+                                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                                </path>
+                                                                <path id="primary-4" data-name="primary"
+                                                                    d="M8,21H4a1,1,0,0,1-1-1V16"
+                                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                                </path>
+                                                                <path id="primary-5" data-name="primary"
+                                                                    d="M21,16v4a1,1,0,0,1-1,1H16"
+                                                                    style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                                                                </path>
+                                                            </svg>
                                                         </div>
                                                         <div class="p-2">
                                                             Luas Tanah :

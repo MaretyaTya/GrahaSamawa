@@ -16,13 +16,14 @@
                         <?php echo method_field('PUT'); ?>
 
                         <div class="row">
+                            
                             <div class="col-md-12 mb-4">
                                 <div>
                                     <label for="gambarUnit" class="form-label">Pilih gambar unit (Maks. 10
                                         gambar)</label>
-                                    <input id="gambarUnit" type="file" name="images[]" multiple accept="image/*"
-                                        class="form-control" onchange="previewImages()">
-                                    <div id="imagePerview" class="mt-2 d-flex flex-wrap"></div>
+                                    <input type="file" name="images[]" multiple accept="image/*"
+                                        class="form-control gambarUnit">
+                                    <div class="imagePerview mt-2 d-flex flex-wrap"></div>
                                 </div>
                             </div>
 
@@ -91,4 +92,6 @@
             </div>
         </div>
     </div>
+
+    <script src="<?php echo e(asset('js/script.js')); ?>"></script>
 <?php /**PATH C:\Users\maret\OneDrive\Documents\WEBSITE PROJECT\Real Estate\Website\GrahaSamawa\resources\views/modals/unit-edit-modal.blade.php ENDPATH**/ ?>

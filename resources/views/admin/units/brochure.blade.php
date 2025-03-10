@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="my-3">
-        <h2>Upload / Update Brosur</h2>
+        <h2>Data Brosur</h2>
         <hr>
 
         @if (session('success'))

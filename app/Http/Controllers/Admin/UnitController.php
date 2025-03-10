@@ -30,7 +30,6 @@ class UnitController extends Controller
         $visitorData = Visitor::orderBy('year', 'desc')->orderBy('month', 'desc')->get();
 
         // Brochure
-        // $brochure = Brochure::all();
         $brochure = Brochure::where('is_active', true)->first() ?? null;
 
         // dd($units);
@@ -44,11 +43,6 @@ class UnitController extends Controller
         $units = Unit::with('images')->orderBy('updated_at', 'desc')->paginate(10);
         return view('admin.units.unit', compact('units'));
     }
-
-    // public function __construct()
-    // {
-    //     $this->middleware('auth')->except(['index', 'store']); // Store bisa diakses tanpa login
-    // }
 
     public function store(Request $request)
     {
@@ -125,7 +119,7 @@ class UnitController extends Controller
             'luas_tanah' => 'required|numeric',
             'luas_bangunan' => 'required|numeric',
             'spesifikasi' => 'nullable|string',
-            'images.*' => 'image|mimes:jpeg,png,jpg|max:2048|nullable'
+            'images.*' => 'image|mimes:jpeg,png,jpg'
         ]);
 
 

@@ -137,12 +137,14 @@
                             </td>
                         </tr>
                     @endforeach
+                    @include('modals.unit-add-modal')
                     @include('modals.unit-edit-modal')
+
                 </tbody>
             </table>
         </div>
     </div>
-    @include('modals.unit-add-modal')
+
 
     <!-- MODAL HAPUS -->
     <div class="modal fade" id="hapusUnit" tabindex="-1" aria-hidden="true">

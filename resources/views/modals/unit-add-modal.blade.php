@@ -14,13 +14,13 @@
                     <div class="row">
                         <div class="col-md-12 mb-4">
                             <div>
-                                <label for="gambarUnit" class="form-label">Pilih gambar unit (Maks. 10
-                                    gambar)</label>
-                                <input id="gambarUnit" type="file" name="images[]" multiple accept="image/*"
-                                    class="form-control" onchange="previewImages()">
-                                <img id="imagePreview" src="#" alt="Preview Gambar" style="max-width: 300px; display: none;"></img>
+                                <label for="gambarUnit" class="form-label">Pilih gambar unit (Maks. 10 gambar)</label>
+                                <input type="file" name="images[]" multiple accept="image/*"
+                                    class="form-control gambarUnit">
+                                <div class="imagePerview mt-2 d-flex flex-wrap"></div>
                             </div>
                         </div>
+
                         <div class="col-md-12 mb-4">
                             <div class="form-floating">
                                 <input type="text" id="nama_unit" name="nama_unit" class="form-control"
@@ -118,3 +118,5 @@
         hargaFormat.value = formattedValue;
     });
 </script> --}}
+
+<script src="{{ asset('js/script.js') }}"></script>

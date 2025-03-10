@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="{{ asset('images/icon/ICON.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('images/icon/GRH_LingkarPutih.png') }}" type="image/x-icon">
         <title>Admin Graha Samawa</title>
 
         <!-- BOOTSTRAP CDN -->
@@ -52,7 +52,7 @@
                         <li class="sidebar-item">
                             <a href="/admin/brochure" class="sidebar-link" style="font-weight:500;font-size:18px;">
                                 <i class="fa-solid fa-file-pdf pe-2"></i>
-                                Brosur
+                                Data Brosur
                             </a>
                         </li>
                     </ul>
@@ -105,69 +105,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
-        <script src="{{ asset('js/script.js') }}"></script>
-
-        <!-- Preview Gambar -->
-        {{-- <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                let imageInput = document.getElementById("gambarUnit");
-                let previewContainer = document.getElementById("imagePerview");
-
-                function previewImages() {
-                    previewContainer.innerHTML = ""; // Kosongkan preview sebelum ditampilkan ulang
-                    let files = Array.from(imageInput.files); // Ambil file yang dipilih
-
-                    if (files.length > 10) {
-                        alert("Maksimal 10 gambar yang dapat diunggah!");
-                        imageInput.value = ""; // Reset input file
-                        return;
-                    }
-
-                    files.forEach((file, index) => {
-                        let reader = new FileReader();
-                        reader.onload = function(e) {
-                            let imageWrapper = document.createElement("div");
-                            imageWrapper.className = "position-relative me-2 mb-2";
-                            imageWrapper.style.display = "inline-block";
-
-                            let img = document.createElement("img");
-                            img.src = e.target.result;
-                            img.className = "img-thumbnail";
-                            img.style.width = "100px";
-                            img.style.height = "100px";
-                            img.style.objectFit = "cover";
-
-                            let removeBtn = document.createElement("button");
-                            removeBtn.innerHTML = "x";
-                            removeBtn.className = "btn btn-danger btn-sm position-absolute";
-                            removeBtn.style.top = "5px";
-                            removeBtn.style.right = "5px";
-                            removeBtn.style.padding = "2px 5px";
-                            removeBtn.style.borderRadius = "50%";
-
-                            removeBtn.onclick = function() {
-                                files.splice(index, 1); // Hapus file dari array
-                                updateFileInput(files);
-                                previewImages();
-                            };
-
-                            imageWrapper.appendChild(img);
-                            imageWrapper.appendChild(removeBtn);
-                            previewContainer.appendChild(imageWrapper);
-                        };
-                        reader.readAsDataURL(file);
-                    });
-                }
-
-                function updateFileInput(files) {
-                    let dataTransfer = new DataTransfer();
-                    files.forEach((file) => dataTransfer.items.add(file));
-                    imageInput.files = dataTransfer.files;
-                }
-
-                imageInput.addEventListener("change", previewImages);
-            });
-        </script> --}}
 
         <script>
             // Update modal fields when edit button is clicked

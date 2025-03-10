@@ -26,16 +26,20 @@ window.setTimeout(function(){
 
 // Image Perview
 document.addEventListener("DOMContentLoaded", function () {
-    let imageInput = document.getElementById("gambarUnit");
-    let previewContainer = document.getElementById("imagePerview");
+    document.addEventListener("change", function (event) {
+        if (event.target.classList.contains("gambarUnit")) {
+            previewImages(event.target);
+        }
+    });
 
-    function previewImages() {
+    function previewImages(inputElement) {
+        let previewContainer = inputElement.closest(".modal").querySelector(".imagePerview");
         previewContainer.innerHTML = ""; // Kosongkan preview sebelum ditampilkan ulang
-        let files = Array.from(imageInput.files); // Ambil file yang dipilih
+        let files = Array.from(inputElement.files); // Ambil file yang dipilih
 
         if (files.length > 10) {
             alert("Maksimal 10 gambar yang dapat diunggah!");
-            imageInput.value = ""; // Reset input file
+            inputElement.value = ""; // Reset input file
             return;
         }
 
@@ -64,8 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeBtn.onclick = function (event) {
                     event.preventDefault(); // Mencegah reload
                     files.splice(index, 1); // Hapus file dari array
-                    updateFileInput(files);
-                    previewImages();
+                    updateFileInput(inputElement, files);
+                    previewImages(inputElement);
                 };
 
                 imageWrapper.appendChild(img);
@@ -76,12 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function updateFileInput(files) {
+    function updateFileInput(inputElement, files) {
         let dataTransfer = new DataTransfer();
         files.forEach((file) => dataTransfer.items.add(file));
-        imageInput.files = dataTransfer.files;
+        inputElement.files = dataTransfer.files;
     }
-
-    imageInput.addEventListener("change", previewImages);
 });
+
 
